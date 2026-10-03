@@ -22,6 +22,6 @@ These are study and team projects. I label each one so you know what it was and 
       <li>Wrote the security report for the team.</li>
     </ul>
     <p class="muted">Built with React, TypeScript, Vite, Tailwind CSS, NeonDB and Vercel.</p>
-    <p><a href="https://www.beyondai-saltjs.me/">Open the app</a></p>
+    <p><a href="https://www.beyondai-saltjs.me/">Open the app</a> | <a href="{{ '/projects/beyondreaim-support-document/' | relative_url }}">Read the support document</a></p>
   </li>
 </ul>

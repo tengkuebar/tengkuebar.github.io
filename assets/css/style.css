@@ -322,3 +322,9 @@ pre {
 .badge-progress {
   border-style: dashed;
 }
+
+/* Tables in write-ups */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.table-wrap table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.table-wrap th, .table-wrap td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+.table-wrap th { background: var(--card); }
