@@ -75,7 +75,6 @@ IT support graduate with a Master of Cybersecurity from Monash University. I hol
 
 - Google IT Support Professional Specialization
 - Certified in Cybersecurity (CC), ISC2
-- System Administration and IT Infrastructure Services, and The Bits and Bytes of Computer Networking
 - Microsoft Azure Fundamentals (AZ-900), in progress
 
 ## Languages and work rights
