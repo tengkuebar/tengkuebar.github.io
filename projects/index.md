@@ -20,8 +20,9 @@ These are study and team projects. I label each one so you know what it was and 
       <li>Fixed a CORS misconfiguration and added rate limiting and least-privilege database access.</li>
       <li>Ran Nuclei scans and set up SonarQube.</li>
       <li>Wrote the security report for the team.</li>
+      <li>Wrote support documentation with the team, covering setup, troubleshooting, incident response and backup and restore.</li>
     </ul>
     <p class="muted">Built with React, TypeScript, Vite, Tailwind CSS, NeonDB and Vercel.</p>
-    <p><a href="https://www.beyondai-saltjs.me/">Open the app</a> | <a href="{{ '/projects/beyondreaim-support-document/' | relative_url }}">Read the support document</a></p>
+    <p><a href="https://www.beyondai-saltjs.me/">Open the app</a></p>
   </li>
 </ul>
