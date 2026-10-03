@@ -255,3 +255,70 @@ pre {
   border-radius: 0.25rem;
   font-size: 0.9em;
 }
+
+/* Home page */
+
+.hero .lead {
+  font-size: 1.15rem;
+  max-width: 60ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.fineprint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Cards */
+
+.card-grid {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 1rem;
+}
+
+.card-grid > li {
+  max-width: none;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0.4rem 0 0;
+}
+
+.card .muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--link);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.badge-progress {
+  border-style: dashed;
+}

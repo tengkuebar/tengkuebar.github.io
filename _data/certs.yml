@@ -1,0 +1,22 @@
+# Certificates shown as cards on the home page.
+# status is either Earned or In progress.
+# url is the public link. link_label is the text of the link on the card.
+# A card shows its link only when url is not empty.
+
+- name: Google IT Support Professional Specialization
+  issuer: Google
+  status: Earned
+  url: "https://www.coursera.org/account/accomplishments/specialization/YJ6LU7FRYP3U"
+  link_label: "View on Coursera"
+
+- name: Certified in Cybersecurity (CC)
+  issuer: ISC2
+  status: Earned
+  url: "https://www.credly.com/badges/832ed40d-18f7-49f8-b00c-d1b3b51aa7d1/public_url"
+  link_label: "Verify on Credly"
+
+- name: Microsoft Azure Fundamentals (AZ-900)
+  issuer: Microsoft
+  status: In progress
+  url: ""
+  link_label: ""

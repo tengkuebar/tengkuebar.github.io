@@ -2,8 +2,48 @@
 title: Home
 ---
 
-# Tengku Ebar Syarif Hamzah
+<section class="hero">
+  <h1>I like getting people&rsquo;s tech working again.</h1>
+  <p class="lead">I&rsquo;m Syarif, an IT support graduate with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for service desk and IT support officer roles.</p>
+  <p class="hero-actions">
+    <a class="btn" href="{{ '/cv/' | relative_url }}">View CV</a>
+    <a class="btn btn-secondary" href="mailto:{{ site.email }}">Email me</a>
+  </p>
+  <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
+</section>
 
-{{ site.description }}
+<section aria-labelledby="certs-heading">
+  <h2 id="certs-heading">Certificates</h2>
+  <ul class="card-grid">
+    {% for cert in site.data.certs %}
+    <li class="card">
+      <h3>{{ cert.name }}</h3>
+      <p class="muted">{{ cert.issuer }}</p>
+      <p><span class="badge{% if cert.status == 'In progress' %} badge-progress{% endif %}">{{ cert.status }}</span></p>
+      {% if cert.url and cert.url != "" %}<p><a href="{{ cert.url }}" rel="noopener">{{ cert.link_label | default: "Verify" }}</a></p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
-This site is under construction.
+<section aria-labelledby="work-heading">
+  <h2 id="work-heading">What I&rsquo;ve worked on</h2>
+  <ul class="card-grid">
+    <li class="card">
+      <h3>IT internship</h3>
+      <p class="muted">PT. Mede Media Softika, March to September 2023</p>
+      <p>I worked remotely with an IT team on a client database project. I loaded client data into an Oracle database, checked uploads through error logs and fixed SQL queries.</p>
+    </li>
+    <li class="card">
+      <h3>Security work on a team web platform</h3>
+      <p class="muted">Monash University, FIT5120</p>
+      <p>I fixed a CORS misconfiguration and added rate limiting, token-based sign-in and least-privilege database access. I also wrote the security report for the team.</p>
+    </li>
+    <li class="card">
+      <h3>Published research</h3>
+      <p class="muted">International Journal of Computer Science and Information Technology Research</p>
+      <p>I co-authored a paper on a digital healthcare platform business model. <a href="https://www.researchpublish.com/papers/a-conceptual-ehealthcare4u-digital-platform-business-model-ensure-healthy-lives-and-promote-wellbeing-for-all-ages-of-healthcare-and-including-prevention--cure">Read the paper</a>.</p>
+    </li>
+  </ul>
+  <p>There is more detail on the <a href="{{ '/cv/' | relative_url }}">CV page</a>.</p>
+</section>
