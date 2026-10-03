@@ -11,7 +11,7 @@ baseurl: ""
 email: tengku.ebar@gmail.com
 # The footer link stays hidden if this is left empty.
 linkedin_url: "https://www.linkedin.com/in/tengku-ebar-syarif-hamzah-422367194"
-# PLACEHOLDER. This file does not exist yet. Add the PDF in step 4 under this name.
+# The PDF behind the Download button on the CV page.
 cv_path: "/assets/cv/CV_Tengku_Ebar_IT_Support.pdf"
 
 # Every page uses the default layout unless it says otherwise.
