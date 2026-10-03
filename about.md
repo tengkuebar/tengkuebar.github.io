@@ -10,9 +10,11 @@ I'm Syarif. I finished my Master of Cybersecurity at Monash University and I gra
 
 I want to work in IT support because I like helping people. When someone's laptop or account stops working, they're stressed, and fixing it for them feels good. I'd like to use what I've learned over the years to do that every day.
 
-In 2023 I did a remote IT internship on a client database project, mostly with Oracle SQL. Right now I'm studying for AZ-900 and practising PowerShell and Bash.
+In 2023 I did a remote IT internship on a client database project, mostly with Oracle SQL. Right now I'm studying for AZ-900 and practising PowerShell and Bash. I also deliver for Uber Eats part-time, so I deal with customers face to face.
 
 I speak English, Indonesian and Malay. I'm also open to security analyst roles later, since my degree is in security.
+
+My team project at Monash was a web platform called [BeyondReAim](https://www.beyondai-saltjs.me/). I did the security work on it.
 
 ## Contact
 

@@ -16,7 +16,7 @@ Melbourne, Victoria, Australia. [tengku.ebar@gmail.com](mailto:tengku.ebar@gmail
 
 ## Professional summary
 
-IT support graduate with a Master of Cybersecurity from Monash University. I hold the Google IT Support Professional Specialization and I am preparing for the Microsoft AZ-900 exam. I am comfortable with Windows and Linux, and I understand networking and system administration. I have worked with an IT team on a client database project. I am looking for a service desk or IT support officer role where I can keep learning and add a security mindset.
+IT support graduate with a Master of Cybersecurity from Monash University. I hold the Google IT Support Professional Specialization and I am preparing for the Microsoft AZ-900 exam. I am comfortable with Windows and Linux, and I understand networking and system administration. I am looking for a service desk or IT support officer role where I can keep learning and add a security mindset.
 
 ## Key skills
 
@@ -32,8 +32,7 @@ IT support graduate with a Master of Cybersecurity from Monash University. I hol
 
 *Monash University, Melbourne, Australia. Graduating October 2026.*
 
-- Coursework in threat detection, network security and secure systems.
-- Hands-on vulnerability scanning practical using Nmap, Burp Suite, Wireshark and Metasploit.
+- Coursework in threat detection, network security and secure systems, with a hands-on vulnerability scanning practical.
 
 ### Bachelor of Technology, Computer and Information Systems Security (Information Assurance)
 
@@ -43,19 +42,24 @@ IT support graduate with a Master of Cybersecurity from Monash University. I hol
 
 ## Experience
 
+### Delivery Rider (part-time)
+
+*Uber Eats, Melbourne, Australia. Part-time.*
+
+- Deliver orders by e-bike, deal with customers directly and keep to delivery times.
+
 ### Information Technology Intern
 
 *PT. Mede Media Softika, Jakarta, Indonesia (remote). Mar 2023 to Sep 2023.*
 
-- Worked with an IT team on a client database project.
+- Worked with an IT team on a client database project, handled company data carefully and kept clear documentation.
 - Loaded and merged client data into an Oracle database using SQL Loader, with a custom command for each document.
 - Checked uploaded data through error logs, fixed SQL queries, and moved temporary data into final data.
 - Used TOAD, Visual Studio and IIS, and wrote custom parameters in C# for a locally hosted web app.
-- Handled company data carefully and kept clear documentation.
 
 ## Projects
 
-### Team web platform security work (FIT5120)
+### BeyondReAim team web platform, security work (FIT5120)
 
 *Monash University*
 
