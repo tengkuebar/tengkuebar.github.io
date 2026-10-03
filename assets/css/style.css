@@ -1,0 +1,257 @@
+/* Ocean Depths theme, light and dark. Tokens come from 02_design/03_theme.md. */
+
+:root {
+  --bg: #f1faee;
+  --card: #ffffff;
+  --band: #1a2332;
+  --band-text: #f1faee;
+  --band-link: #a8dadc;
+  --text: #1a2332;
+  --text-muted: #4a5568;
+  --link: #1f6f6f;
+  --btn-bg: #1f6f6f;
+  --btn-text: #ffffff;
+  --btn-alt: #1a2332;
+  --border: #a8dadc;
+  --focus: #1f6f6f;
+  --code-bg: #111823;
+  --code-text: #e6f1ee;
+
+  --page-width: 48rem;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a2332;
+    --card: #222d40;
+    --band: #111823;
+    --text: #f1faee;
+    --text-muted: #b8c4d0;
+    --link: #a8dadc;
+    --btn-bg: #a8dadc;
+    --btn-text: #1a2332;
+    --btn-alt: #a8dadc;
+    --border: #34425a;
+    --focus: #a8dadc;
+  }
+}
+
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 40em) {
+  html {
+    font-size: 106.25%; /* 17px on desktop, 16px on small phones */
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+main.container {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p,
+li {
+  max-width: 70ch;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+/* Skip link for keyboard users */
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Header and footer bands */
+
+.band {
+  background: var(--band);
+  color: var(--band-text);
+}
+
+.band a {
+  color: var(--band-link);
+}
+
+.band a:focus-visible {
+  outline-color: var(--band-link);
+}
+
+.band-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.site-name {
+  color: var(--band-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.band .site-name {
+  color: var(--band-text);
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.nav-list li {
+  max-width: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.nav-list a[aria-current="page"] {
+  font-weight: 700;
+}
+
+.band-footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.band-footer p {
+  margin: 0;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid var(--btn-bg);
+  border-radius: 0.375rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--btn-alt);
+  color: var(--btn-alt);
+}
+
+/* Code and log blocks */
+
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.35em;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}

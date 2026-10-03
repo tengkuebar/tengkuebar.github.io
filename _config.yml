@@ -1,0 +1,26 @@
+# Site settings. GitHub Pages builds this with Jekyll automatically.
+
+title: Tengku Ebar Syarif Hamzah
+description: IT support graduate with a Master of Cybersecurity, based in Melbourne.
+
+# The repo is named tengkuebar.github.io, so the site address is this one.
+url: "https://tengkuebar.github.io"
+baseurl: ""
+
+# Contact details used in the footer and on the Contact page.
+email: tengku.ebar@gmail.com
+# The footer link stays hidden if this is left empty.
+linkedin_url: "https://www.linkedin.com/in/tengku-ebar-syarif-hamzah-422367194"
+# PLACEHOLDER. This file does not exist yet. Add the PDF in step 4 under this name.
+cv_path: "/assets/cv/CV_Tengku_Ebar_IT_Support.pdf"
+
+# Every page uses the default layout unless it says otherwise.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Keep the build small. Only the files the site needs get published.
+exclude:
+  - README.md
