@@ -14,7 +14,7 @@ title: Home
 
 <section aria-labelledby="certs-heading">
   <h2 id="certs-heading">Certificates</h2>
-  <ul class="card-grid">
+  <ul class="card-grid cert-grid">
     {% for cert in site.data.certs %}
     <li class="card">
       <h3>{{ cert.name }}</h3>

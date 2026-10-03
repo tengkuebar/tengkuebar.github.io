@@ -322,3 +322,19 @@ pre {
 .badge-progress {
   border-style: dashed;
 }
+
+/* Certificate cards share rows, so names, issuers, status and links line up across cards */
+.cert-grid {
+  row-gap: 0;
+}
+
+.cert-grid .card {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  align-content: start;
+  margin-bottom: 1rem;
+}
+
+
