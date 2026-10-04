@@ -15,6 +15,8 @@ These are study and team projects. I label each one so you know what it was and 
     <h3>BeyondReAim</h3>
     <p class="muted">Team project, Monash University (FIT5120)</p>
     <p>A web platform that helps young Australian workers and recent graduates see how AI may change their industry. Users pick an industry, take a guided self-assessment and get a personal risk profile.</p>
+    <details class="more" open>
+    <summary>My role and details</summary>
     <p><strong>My role:</strong> ICT support, testing and security for the team.</p>
     <h4>Support</h4>
     <ul>
@@ -41,6 +43,7 @@ These are study and team projects. I label each one so you know what it was and 
       <li><a href="{{ '/assets/img/beyondreaim/industry-insights.webp' | relative_url }}"><img src="{{ '/assets/img/beyondreaim/industry-insights.webp' | relative_url }}" alt="Industry AI insights page showing AI exposure, entry-level demand and role-specific impacts for marketing" loading="lazy"></a></li>
       <li><a href="{{ '/assets/img/beyondreaim/learning-hub.webp' | relative_url }}"><img src="{{ '/assets/img/beyondreaim/learning-hub.webp' | relative_url }}" alt="Guided learning page with progress, an achievement and the learning hub" loading="lazy"></a></li>
     </ul>
+    </details>
     <p class="muted">Built with React, TypeScript, Vite, Tailwind CSS, NeonDB and Vercel.</p>
     <p><a href="https://www.beyondai-saltjs.me/">Open the app</a></p>
   </li>
@@ -48,6 +51,8 @@ These are study and team projects. I label each one so you know what it was and 
     <h3>Pi-hole over Tailscale</h3>
     <p class="muted">Personal home lab project</p>
     <p>A Pi-hole ad and tracker blocker that runs in Docker on my Windows laptop. My phone uses it as its DNS from anywhere, including on mobile data, through a Tailscale tunnel. No router port is forwarded, so nothing is open to the home network or the internet.</p>
+    <details class="more">
+    <summary>My role and details</summary>
     <p><strong>My role:</strong> I built, secured and tested it myself.</p>
     <h4>Setup</h4>
     <ul>
@@ -69,6 +74,7 @@ These are study and team projects. I label each one so you know what it was and 
       <li><a href="{{ '/assets/img/pihole/phone-4g.webp' | relative_url }}"><img src="{{ '/assets/img/pihole/phone-4g.webp' | relative_url }}" alt="Phone on 4G showing the test domain cannot be reached" loading="lazy"></a></li>
       <li><a href="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}"><img src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" alt="Pi-hole query log showing the test domain blocked" loading="lazy"></a></li>
     </ul>
+    </details>
     <p class="muted">Built with Pi-hole, Docker Desktop, Tailscale and nmap.</p>
     <p><a href="https://github.com/tengkuebar/pihole-tailscale">View on GitHub</a></p>
   </li>

@@ -454,3 +454,13 @@ pre {
 }
 
 
+
+/* Collapsible project details */
+.more { margin-top: 0.75rem; }
+.more > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--link);
+  padding: 0.25rem 0;
+}
+.more > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
