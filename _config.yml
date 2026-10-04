@@ -11,8 +11,12 @@ baseurl: ""
 email: tengku.ebar@gmail.com
 # The footer link stays hidden if this is left empty.
 linkedin_url: "https://www.linkedin.com/in/tengku-ebar-syarif-hamzah-422367194"
-# The PDF behind the Download button on the CV page.
-cv_path: "/assets/cv/CV_Tengku_Ebar_IT_Support.pdf"
+# The PDF behind the Download button on the Resume page.
+resume_path: "/assets/resume/Resume_Tengku_Ebar_ICT_Support.pdf"
+
+# Lets a page list old addresses that should redirect to it (built into GitHub Pages).
+plugins:
+  - jekyll-redirect-from
 
 # Every page uses the default layout unless it says otherwise.
 defaults:

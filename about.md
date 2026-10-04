@@ -22,5 +22,5 @@ Email is the easiest way to reach me.
 
 - **Email** [{{ site.email }}](mailto:{{ site.email }})
 {% if site.linkedin_url != "" %}- **LinkedIn** [Tengku Ebar Syarif Hamzah]({{ site.linkedin_url }})
-{% endif %}- **Resume** [Read it here]({{ '/cv/' | relative_url }}) or [download the PDF]({{ site.cv_path | relative_url }})
+{% endif %}- **Resume** [Read it here]({{ '/resume/' | relative_url }}) or [download the PDF]({{ site.resume_path | relative_url }})
 - **Location** Melbourne, Victoria, Australia

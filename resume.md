@@ -1,12 +1,13 @@
 ---
 title: Resume
-permalink: /cv/
+permalink: /resume/
+redirect_from: /cv/
 description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer with a Master of Cybersecurity, based in Melbourne.
 ---
 
 # Resume
 
-<p><a class="btn" href="{{ site.cv_path | relative_url }}">Download resume (PDF)</a></p>
+<p><a class="btn" href="{{ site.resume_path | relative_url }}">Download resume (PDF)</a></p>
 
 ## Tengku Ebar Syarif Hamzah
 
