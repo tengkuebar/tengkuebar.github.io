@@ -15,9 +15,9 @@ These are study and team projects. I label each one so you know what it was and 
     <h3>BeyondReAim</h3>
     <p class="muted">Team project, Monash University (FIT5120)</p>
     <p>A web platform that helps young Australian workers and recent graduates see how AI may change their industry. Users pick an industry, take a guided self-assessment and get a personal risk profile.</p>
-    <details class="more" open>
-    <summary>My role and details</summary>
     <p><strong>My role:</strong> ICT support, testing and security for the team.</p>
+    <details class="more" open>
+    <summary>Details and screenshots</summary>
     <h4>Support</h4>
     <ul>
       <li>Set up the team's laptops so each one could run the app and its tools locally, and fixed installation problems as they came up.</li>
@@ -50,12 +50,13 @@ These are study and team projects. I label each one so you know what it was and 
   <li class="card">
     <h3>Pi-hole over Tailscale</h3>
     <p class="muted">Personal home lab project</p>
-    <p>A Pi-hole ad and tracker blocker that runs in Docker on my Windows laptop. My phone uses it as its DNS from anywhere, including on mobile data, through a Tailscale tunnel. No router port is forwarded, so nothing is open to the home network or the internet.</p>
-    <details class="more">
-    <summary>My role and details</summary>
+    <p>I set up network-wide ad blocking with Pi-hole in Docker and reached it from my phone over Tailscale. I tested it with nmap, and its ports could not be reached from outside the tailnet.</p>
     <p><strong>My role:</strong> I built, secured and tested it myself.</p>
+    <details class="more">
+    <summary>Details and screenshots</summary>
     <h4>Setup</h4>
     <ul>
+      <li>No router port is forwarded, so nothing is open to the home network or the internet. My phone uses the Pi-hole as its DNS on mobile data through the Tailscale tunnel.</li>
       <li>Chose Tailscale over a self-hosted WireGuard server, because I don't control the router and the ISP may use CGNAT, so port forwarding wasn't an option.</li>
       <li>Bound Pi-hole's DNS and admin ports to the Tailscale address only.</li>
       <li>Fixed a startup problem. A fresh container inherited Tailscale DNS, which is Pi-hole itself, so it couldn't download its blocklists. I gave the container its own resolvers.</li>
