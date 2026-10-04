@@ -2,6 +2,8 @@
 title: Projects
 permalink: /projects/
 description: Study and team projects by Syarif, labelled as what they are.
+# Loads the screenshot viewer for the .shots gallery
+lightbox: true
 ---
 
 # Projects
@@ -14,15 +16,30 @@ These are study and team projects. I label each one so you know what it was and 
     <p class="muted">Team project, Monash University (FIT5120)</p>
     <p>A web platform that helps young Australian workers and recent graduates see how AI may change their industry. Users pick an industry, take a guided self-assessment and get a personal risk profile.</p>
     <p><strong>My role:</strong> IT support, testing and security for the team.</p>
+    <h4>Support</h4>
     <ul>
       <li>Set up the team's laptops so each one could run the app and its tools locally, and fixed installation problems as they came up.</li>
+    </ul>
+    <h4>Testing and review</h4>
+    <ul>
       <li>Tested the app in every iteration, covering user, system and security testing, to keep it to the agreed quality standards.</li>
+      <li>Reviewed the project for high-risk areas and gaps against the agreed standards and procedures, and reported them to the team.</li>
+    </ul>
+    <h4>Security</h4>
+    <ul>
       <li>Found security bugs and worked with the developers to diagnose, fix and retest them, including a CORS misconfiguration.</li>
       <li>Added rate limiting to the app.</li>
       <li>Found that the app connected to the database with admin access, and worked with the team's database member to move it to least-privilege access.</li>
       <li>Ran Nuclei scans and set up SonarQube.</li>
-      <li>Reviewed the project for high-risk areas and gaps against the agreed standards and procedures, and reported them to the team.</li>
+    </ul>
+    <h4>Documentation</h4>
+    <ul>
       <li>Wrote the security report and, with the team, the handover documents, including the system specification and guides for setup, troubleshooting, incident response, and backup and restore.</li>
+    </ul>
+    <ul class="shots">
+      <li><a href="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}"><img src="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}" alt="BeyondReAim home page with the guided journey from AI impact to being future ready" loading="lazy"></a></li>
+      <li><a href="{{ '/assets/img/beyondreaim/industry-insights.webp' | relative_url }}"><img src="{{ '/assets/img/beyondreaim/industry-insights.webp' | relative_url }}" alt="Industry AI insights page showing AI exposure, entry-level demand and role-specific impacts for marketing" loading="lazy"></a></li>
+      <li><a href="{{ '/assets/img/beyondreaim/learning-hub.webp' | relative_url }}"><img src="{{ '/assets/img/beyondreaim/learning-hub.webp' | relative_url }}" alt="Guided learning page with progress, an achievement and the learning hub" loading="lazy"></a></li>
     </ul>
     <p class="muted">Built with React, TypeScript, Vite, Tailwind CSS, NeonDB and Vercel.</p>
     <p><a href="https://www.beyondai-saltjs.me/">Open the app</a></p>
