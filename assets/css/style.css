@@ -464,3 +464,28 @@ pre {
   padding: 0.25rem 0;
 }
 .more > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+/* Project cards run one per row so the details and screenshots have room */
+.project-list {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+/* Thumbnails that must show whole, such as a phone screen or a log table */
+.shots-fit {
+  align-items: center;
+}
+
+.shots-fit a {
+  display: flex;
+  justify-content: center;
+  background: var(--card);
+}
+
+.shots-fit img {
+  width: auto;
+  max-width: 100%;
+  max-height: 15rem;
+  aspect-ratio: auto;
+  object-fit: contain;
+}

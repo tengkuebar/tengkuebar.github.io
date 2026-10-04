@@ -10,7 +10,7 @@ lightbox: true
 
 These are study and team projects. I label each one so you know what it was and what part I did.
 
-<ul class="card-grid">
+<ul class="card-grid project-list">
   <li class="card">
     <h3>BeyondReAim</h3>
     <p class="muted">Team project, Monash University (FIT5120)</p>
@@ -51,7 +51,6 @@ These are study and team projects. I label each one so you know what it was and 
     <h3>Pi-hole over Tailscale</h3>
     <p class="muted">Personal home lab project</p>
     <p>I set up network-wide ad blocking with Pi-hole in Docker and reached it from my phone over Tailscale. I tested it with nmap, and its ports could not be reached from outside the tailnet.</p>
-    <p><strong>My role:</strong> I built, secured and tested it myself.</p>
     <details class="more">
     <summary>Details and screenshots</summary>
     <h4>Setup</h4>
@@ -71,7 +70,7 @@ These are study and team projects. I label each one so you know what it was and 
       <li>The laptop is a single point of failure. If it sleeps, DNS stops for every device on the tailnet.</li>
       <li>Docker on Windows hides client addresses, so every query shows one internal address.</li>
     </ul>
-    <ul class="shots">
+    <ul class="shots shots-fit">
       <li><a href="{{ '/assets/img/pihole/phone-4g.webp' | relative_url }}"><img src="{{ '/assets/img/pihole/phone-4g.webp' | relative_url }}" alt="Phone on 4G showing the test domain cannot be reached" loading="lazy"></a></li>
       <li><a href="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}"><img src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" alt="Pi-hole query log showing the test domain blocked" loading="lazy"></a></li>
     </ul>
