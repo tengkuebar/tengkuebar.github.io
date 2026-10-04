@@ -4,9 +4,9 @@ title: Home
 
 <section class="hero">
   <h1>I like getting people&rsquo;s tech working again.</h1>
-  <p class="lead">I&rsquo;m Syarif, an IT support graduate with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for service desk and IT support officer roles.</p>
+  <p class="lead">I&rsquo;m Syarif, a graduate ICT support engineer with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for ICT support engineer roles.</p>
   <p class="hero-actions">
-    <a class="btn" href="{{ '/cv/' | relative_url }}">View CV</a>
+    <a class="btn" href="{{ '/cv/' | relative_url }}">View resume</a>
     <a class="btn btn-secondary" href="mailto:{{ site.email }}">Email me</a>
   </p>
   <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
@@ -45,5 +45,5 @@ title: Home
       <p>I co-authored a paper on a digital healthcare platform business model. <a href="https://www.researchpublish.com/papers/a-conceptual-ehealthcare4u-digital-platform-business-model-ensure-healthy-lives-and-promote-wellbeing-for-all-ages-of-healthcare-and-including-prevention--cure">Read the paper</a>.</p>
     </li>
   </ul>
-  <p>There is more detail on the <a href="{{ '/cv/' | relative_url }}">CV page</a>.</p>
+  <p>There is more detail on the <a href="{{ '/cv/' | relative_url }}">resume page</a>.</p>
 </section>

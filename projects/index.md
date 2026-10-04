@@ -15,7 +15,7 @@ These are study and team projects. I label each one so you know what it was and 
     <h3>BeyondReAim</h3>
     <p class="muted">Team project, Monash University (FIT5120)</p>
     <p>A web platform that helps young Australian workers and recent graduates see how AI may change their industry. Users pick an industry, take a guided self-assessment and get a personal risk profile.</p>
-    <p><strong>My role:</strong> IT support, testing and security for the team.</p>
+    <p><strong>My role:</strong> ICT support, testing and security for the team.</p>
     <h4>Support</h4>
     <ul>
       <li>Set up the team's laptops so each one could run the app and its tools locally, and fixed installation problems as they came up.</li>

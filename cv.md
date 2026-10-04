@@ -1,28 +1,30 @@
 ---
-title: CV
+title: Resume
 permalink: /cv/
-description: CV of Tengku Ebar Syarif Hamzah, IT support graduate with a Master of Cybersecurity, based in Melbourne.
+description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer with a Master of Cybersecurity, based in Melbourne.
 ---
 
-# CV
+# Resume
 
-<p><a class="btn" href="{{ site.cv_path | relative_url }}">Download PDF</a></p>
+<p><a class="btn" href="{{ site.cv_path | relative_url }}">Download resume (PDF)</a></p>
 
 ## Tengku Ebar Syarif Hamzah
 
-**IT Support Graduate**
+**Graduate ICT Support Engineer**
 
 Melbourne, Victoria, Australia. [tengku.ebar@gmail.com](mailto:tengku.ebar@gmail.com). [LinkedIn](https://www.linkedin.com/in/tengku-ebar-syarif-hamzah-422367194).
 
 ## Professional summary
 
-IT support graduate with a Master of Cybersecurity from Monash University. I hold the Google IT Support Professional Specialization and I am preparing for the Microsoft AZ-900 exam. I am comfortable with Windows and Linux, and I understand networking and system administration. I am looking for a service desk or IT support officer role where I can keep learning and add a security mindset.
+Graduate ICT support engineer with a Master of Cybersecurity from Monash University. I diagnose and resolve installation and software problems, test systems for functionality and security, and write technical documentation. I hold the Google IT Support Professional Specialization and ISC2 CC, and I am preparing for Microsoft AZ-900.
 
 ## Key skills
 
-- **Support and systems.** Windows, Linux, system administration, IT infrastructure, troubleshooting fundamentals.
+- **Support.** Installing, configuring and troubleshooting laptops, software, Windows and Linux; system administration.
+- **Testing.** User, system and security testing; reviewing systems against standards to find high-risk areas.
 - **Networking.** Core networking concepts including IP addressing, DNS and DHCP, from Google IT Support coursework.
-- **Security.** Phishing and malware awareness, network security, vulnerability scanning with Nmap, Burp Suite, Wireshark and Metasploit.
+- **Security.** Phishing and malware awareness, network security, vulnerability scanning with Nmap, Nuclei, Burp Suite, Wireshark and Metasploit, code analysis with SonarQube.
+- **Technical documentation.** System specifications, setup and troubleshooting guides, security reports.
 - **Cloud.** Microsoft Azure fundamentals (AZ-900 in progress).
 - **Data and scripting.** Oracle SQL, basic Python and C#, currently learning PowerShell and Bash.
 
@@ -32,13 +34,13 @@ IT support graduate with a Master of Cybersecurity from Monash University. I hol
 
 *Monash University, Melbourne, Australia. Graduating October 2026.*
 
-- Coursework in threat detection, network security and secure systems, with a hands-on vulnerability scanning practical.
+- Coursework in threat detection, network security and secure systems, with a vulnerability scanning practical.
 
 ### Bachelor of Technology, Computer and Information Systems Security (Information Assurance)
 
 *International Islamic University Malaysia. Completed.*
 
-- Built core knowledge in information security, network fundamentals and secure system design.
+
 
 ## Experience
 
@@ -52,21 +54,22 @@ IT support graduate with a Master of Cybersecurity from Monash University. I hol
 
 *PT. Mede Media Softika, Jakarta, Indonesia (remote). Mar 2023 to Sep 2023.*
 
-- Worked with an IT team on a client database project, handled company data carefully and kept clear documentation.
+- Worked with an IT team on a client database project, handling company data securely and documenting clearly.
 - Loaded and merged client data into an Oracle database using SQL Loader, with a custom command for each document.
-- Checked uploaded data through error logs, fixed SQL queries, and moved temporary data into final data.
-- Used TOAD, Visual Studio and IIS, and wrote custom parameters in C# for a locally hosted web app.
+- Diagnosed upload errors through logs, fixed SQL queries and moved checked temporary data into final tables.
+- Configured a locally hosted web app with TOAD, Visual Studio and IIS, writing custom parameters in C#.
 
 ## Projects
 
-### BeyondReAim team web platform, security work (FIT5120)
+### BeyondReAim team web platform, ICT support, testing and security (FIT5120)
 
 *Monash University*
 
-- Added rate limiting, and worked with the developers to fix a CORS misconfiguration.
-- Found the app was using admin database access and worked with a teammate to move it to least privilege.
+- Set up the team's laptops to run the app and its tools locally, and resolved installation problems.
+- Tested each iteration (user, system and security testing) and flagged high-risk gaps against agreed standards.
+- Added rate limiting, and with developers fixed a CORS issue and moved admin database access to least privilege.
 - Ran Nuclei scans and set up SonarQube, then wrote the security report for the team.
-- Wrote support documentation with the team, covering setup, troubleshooting, incident response and backup.
+- Co-wrote handover documents: system specification, setup, troubleshooting and incident response guides.
 
 ## Publications
 
