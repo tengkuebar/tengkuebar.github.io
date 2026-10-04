@@ -4,7 +4,7 @@ title: Home
 
 <section class="hero">
   <h1>I like getting people&rsquo;s tech working again.</h1>
-  <p class="lead">I&rsquo;m Syarif, a graduate ICT support engineer with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for ICT support engineer roles.</p>
+  <p class="lead">I&rsquo;m Syarif, a graduate ICT support engineer with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for ICT support engineer and entry-level cybersecurity roles.</p>
   <p class="hero-actions">
     <a class="btn" href="{{ '/resume/' | relative_url }}">View resume</a>
     <a class="btn btn-secondary" href="mailto:{{ site.email }}">Email me</a>

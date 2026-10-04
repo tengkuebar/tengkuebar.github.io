@@ -12,7 +12,7 @@ I want to work in ICT support because I like helping people. When someone's lapt
 
 In 2023 I did a remote IT internship on a client database project, mostly with Oracle SQL. Right now I'm studying for AZ-900 and practising PowerShell and Bash. I also deliver for Uber Eats part-time, so I deal with customers face to face.
 
-I speak English, Indonesian and Malay. I'm also open to security analyst roles later, since my degree is in security.
+I speak English, Indonesian and Malay. I'm also applying for entry-level cybersecurity roles, since my degree is in security.
 
 My team project at Monash was a web platform called [BeyondReAim](https://www.beyondai-saltjs.me/). I led the security work on it.
 
