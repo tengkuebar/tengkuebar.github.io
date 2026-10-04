@@ -44,4 +44,32 @@ These are study and team projects. I label each one so you know what it was and 
     <p class="muted">Built with React, TypeScript, Vite, Tailwind CSS, NeonDB and Vercel.</p>
     <p><a href="https://www.beyondai-saltjs.me/">Open the app</a></p>
   </li>
+  <li class="card">
+    <h3>Pi-hole over Tailscale</h3>
+    <p class="muted">Personal home lab project</p>
+    <p>A Pi-hole ad and tracker blocker that runs in Docker on my Windows laptop. My phone uses it as its DNS from anywhere, including on mobile data, through a Tailscale tunnel. No router port is forwarded, so nothing is open to the home network or the internet.</p>
+    <p><strong>My role:</strong> I built, secured and tested it myself.</p>
+    <h4>Setup</h4>
+    <ul>
+      <li>Chose Tailscale over a self-hosted WireGuard server, because I don't control the router and the ISP may use CGNAT, so port forwarding wasn't an option.</li>
+      <li>Bound Pi-hole's DNS and admin ports to the Tailscale address only.</li>
+      <li>Fixed a startup problem. A fresh container inherited Tailscale DNS, which is Pi-hole itself, so it couldn't download its blocklists. I gave the container its own resolvers.</li>
+    </ul>
+    <h4>Testing</h4>
+    <ul>
+      <li>Ran nmap scans from the same Wi-Fi, from another network and from inside the tailnet. The ports were filtered from outside and open only on the tailnet.</li>
+      <li>Opened a test domain on my phone over 4G. The query showed in the Pi-hole log, first forwarded and then blocked after I added the domain to the denylist.</li>
+    </ul>
+    <h4>Limits</h4>
+    <ul>
+      <li>The laptop is a single point of failure. If it sleeps, DNS stops for every device on the tailnet.</li>
+      <li>Docker on Windows hides client addresses, so every query shows one internal address.</li>
+    </ul>
+    <ul class="shots">
+      <li><a href="{{ '/assets/img/pihole/phone-4g.webp' | relative_url }}"><img src="{{ '/assets/img/pihole/phone-4g.webp' | relative_url }}" alt="Phone on 4G showing the test domain cannot be reached" loading="lazy"></a></li>
+      <li><a href="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}"><img src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" alt="Pi-hole query log showing the test domain blocked" loading="lazy"></a></li>
+    </ul>
+    <p class="muted">Built with Pi-hole, Docker Desktop, Tailscale and nmap.</p>
+    <p><a href="https://github.com/tengkuebar/pihole-tailscale">View on GitHub</a></p>
+  </li>
 </ul>
