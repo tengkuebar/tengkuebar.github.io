@@ -23,7 +23,7 @@ Graduate ICT support engineer with a Master of Cybersecurity from Monash Univers
 
 - **Support.** Installing, configuring and troubleshooting laptops, software, Windows and Linux; system administration.
 - **Testing.** User, system and security testing; reviewing systems against standards to find high-risk areas.
-- **Networking.** Core networking concepts including IP addressing, DNS and DHCP, from Google IT Support coursework.
+- **Networking.** Core networking concepts including IP addressing, DNS and DHCP, from Google IT Support coursework and university study.
 - **Security.** Phishing and malware awareness, network security, vulnerability scanning with Nmap, Nuclei, Burp Suite, Wireshark and Metasploit, code analysis with SonarQube.
 - **Technical documentation.** System specifications, setup and troubleshooting guides, security reports.
 - **Cloud.** Microsoft Azure fundamentals (AZ-900 in progress).
