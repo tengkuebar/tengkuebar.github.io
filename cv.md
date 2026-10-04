@@ -63,7 +63,8 @@ IT support graduate with a Master of Cybersecurity from Monash University. I hol
 
 *Monash University*
 
-- Fixed a CORS misconfiguration and added rate limiting and least-privilege database access.
+- Added rate limiting, and worked with the developers to fix a CORS misconfiguration.
+- Found the app was using admin database access and worked with a teammate to move it to least privilege.
 - Ran Nuclei scans and set up SonarQube, then wrote the security report for the team.
 - Wrote support documentation with the team, covering setup, troubleshooting, incident response and backup.
 

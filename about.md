@@ -14,7 +14,7 @@ In 2023 I did a remote IT internship on a client database project, mostly with O
 
 I speak English, Indonesian and Malay. I'm also open to security analyst roles later, since my degree is in security.
 
-My team project at Monash was a web platform called [BeyondReAim](https://www.beyondai-saltjs.me/). I did the security work on it.
+My team project at Monash was a web platform called [BeyondReAim](https://www.beyondai-saltjs.me/). I led the security work on it.
 
 ## Contact
 

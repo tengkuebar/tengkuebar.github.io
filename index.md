@@ -37,7 +37,7 @@ title: Home
     <li class="card">
       <h3>Security work on a team web platform</h3>
       <p class="muted">Monash University, FIT5120</p>
-      <p>I fixed a CORS misconfiguration and added rate limiting and least-privilege database access. I also wrote the security report for the team. <a href="https://www.beyondai-saltjs.me/">See the platform, BeyondReAim</a>.</p>
+      <p>I added rate limiting, and worked with teammates to fix a CORS misconfiguration and move the app from admin to least-privilege database access. I also wrote the security report for the team. <a href="https://www.beyondai-saltjs.me/">See the platform, BeyondReAim</a>.</p>
     </li>
     <li class="card">
       <h3>Published research</h3>
