@@ -1,5 +1,6 @@
 ---
 title: Home
+scroller: true
 ---
 
 <section class="hero">
@@ -28,7 +29,8 @@ title: Home
 
 <section aria-labelledby="work-heading">
   <h2 id="work-heading">What I&rsquo;ve worked on</h2>
-  <ul class="card-grid">
+  <div class="scroller">
+    <ul class="card-grid">
     <li class="card">
       <h3>IT internship</h3>
       <p class="muted">PT. Mede Media Softika, March to September 2023</p>
@@ -40,10 +42,21 @@ title: Home
       <p>I added rate limiting, and worked with teammates to fix a CORS misconfiguration and move the app from admin to least-privilege database access. I also wrote the security report for the team. <a href="https://www.beyondai-saltjs.me/">See the platform, BeyondReAim</a>.</p>
     </li>
     <li class="card">
+      <h3>Pi-hole over Tailscale</h3>
+      <p class="muted">Personal home lab project</p>
+      <p>I set up network-wide ad blocking with Pi-hole in Docker and reached it from my phone over Tailscale. I tested it with nmap, and its ports could not be reached from outside the tailnet. <a href="{{ '/projects/' | relative_url }}">See the project</a>.</p>
+    </li>
+    <li class="card">
+      <h3>DomainCheck</h3>
+      <p class="muted">Personal project, built with an AI coding assistant</p>
+      <p>A web app that checks a domain&rsquo;s email and website security using passive checks only, and explains the results in plain English with a score, ranked fixes and a PDF report. I set the requirements and scope and reviewed the work; Claude Code wrote the code under my direction. <a href="{{ '/projects/' | relative_url }}">See the project</a>.</p>
+    </li>
+    <li class="card">
       <h3>Published research</h3>
       <p class="muted">International Journal of Computer Science and Information Technology Research</p>
       <p>I co-authored a paper on a digital healthcare platform business model. <a href="https://www.researchpublish.com/papers/a-conceptual-ehealthcare4u-digital-platform-business-model-ensure-healthy-lives-and-promote-wellbeing-for-all-ages-of-healthcare-and-including-prevention--cure">Read the paper</a>.</p>
     </li>
   </ul>
+  </div>
   <p>There is more detail on the <a href="{{ '/resume/' | relative_url }}">resume page</a>.</p>
 </section>
