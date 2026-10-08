@@ -1,7 +1,7 @@
 // Adds previous/next buttons and edge fades to a .scroller row of cards.
 // Without JS the row still scrolls and snaps natively.
 (function () {
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduceQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   document.querySelectorAll(".scroller").forEach(function (root) {
     var track = root.querySelector(".card-grid");
     if (!track) return;
@@ -35,7 +35,7 @@
       if (!btn) return;
       var card = track.firstElementChild;
       var step = card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
-      track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: reduce ? "auto" : "smooth" });
+      track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: reduceQuery.matches ? "auto" : "smooth" });
     });
 
     track.addEventListener("scroll", update, { passive: true });

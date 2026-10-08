@@ -21,6 +21,9 @@
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  interpolate-size: allow-keywords;
+
   color-scheme: light dark;
 }
 
@@ -233,7 +236,7 @@ main img {
   color: var(--btn-text);
   font-weight: 600;
   text-decoration: none;
-  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms ease-out, color 150ms ease-out;
+  transition: transform 150ms var(--ease-out);
 }
 
 .btn:active {
@@ -377,6 +380,8 @@ pre {
 
 /* Screenshot viewer opened by assets/js/lightbox.js */
 .lightbox {
+  opacity: 0;
+  transition: opacity 120ms var(--ease-out), display 120ms allow-discrete, overlay 120ms allow-discrete;
   width: 100vw;
   height: 100vh;
   max-width: none;
@@ -391,6 +396,12 @@ pre {
 .lightbox[open] {
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  transition-duration: 200ms;
+}
+
+@starting-style {
+  .lightbox[open] { opacity: 0; }
 }
 
 .lightbox-bar {
@@ -416,10 +427,17 @@ pre {
   font: inherit;
   font-size: 1rem;
   cursor: pointer;
+  transition: transform 150ms var(--ease-out), background-color 150ms var(--ease-out);
 }
 
-.lightbox button:hover {
-  background: rgb(255 255 255 / 0.22);
+.lightbox button:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lightbox button:hover {
+    background: rgb(255 255 255 / 0.22);
+  }
 }
 
 .lightbox-stage {
@@ -437,6 +455,11 @@ pre {
   max-height: calc(100vh - 5rem);
   border-radius: 0.375rem;
   cursor: zoom-in;
+  transition: transform 200ms var(--ease-out);
+}
+
+@starting-style {
+  .lightbox[open] .lightbox-stage img { transform: scale(0.97); }
 }
 
 .lightbox.is-zoomed .lightbox-stage {
@@ -487,6 +510,14 @@ pre {
 }
 .more > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
+/* Smooth open and close where ::details-content is supported; elsewhere it just snaps */
+.more::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 200ms var(--ease-out), content-visibility 200ms allow-discrete;
+}
+.more[open]::details-content { block-size: auto; }
+
 /* Project cards run one per row so the details and screenshots have room */
 .project-list {
   grid-template-columns: 1fr;
@@ -515,8 +546,6 @@ pre {
 
 /* Scrollable row of cards (home, "What I've worked on").
    Native scroll-snap does the work; the arrow buttons are added by scroller.js. */
-:root { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
-
 .scroller { position: relative; }
 
 .scroller > .card-grid {
@@ -535,13 +564,11 @@ pre {
 .scroller > .card-grid > li {
   flex: 0 0 min(17rem, 82%);
   scroll-snap-align: start;
-  transition: transform 160ms var(--ease-out);
 }
-.scroller > .card-grid > li:active { transform: scale(0.98); }
 
 @media (hover: hover) and (pointer: fine) {
-  .scroller > .card-grid > li { transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out); }
-  .scroller > .card-grid > li:hover { transform: translateY(-2px); border-color: var(--link); }
+  .scroller > .card-grid > li { transition: border-color 200ms var(--ease-out); }
+  .scroller > .card-grid > li:hover { border-color: var(--link); }
 }
 
 /* Fade hints that more cards sit off-screen; scroller.js toggles the classes */
@@ -609,8 +636,6 @@ pre {
   .scroller-btn,
   .scroller::before,
   .scroller::after { transition: none; }
-  .scroller > .card-grid > li:hover,
-  .scroller > .card-grid > li:active { transform: none; }
 }
 
 
@@ -619,10 +644,19 @@ pre {
   @view-transition {
     navigation: auto;
   }
+
+  header.band { view-transition-name: site-header; }
+  .band-footer { view-transition-name: site-footer; }
+  ::view-transition-group(root) { animation-duration: 180ms; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .nav-list a { transition: none; }
-  .btn:active { transform: none; }
+  .btn:active,
+  .lightbox button:active { transform: none; }
+  .lightbox button,
+  .lightbox-stage img,
+  .more::details-content { transition: none; }
+  .lightbox { transition-duration: 0ms; }
 }
