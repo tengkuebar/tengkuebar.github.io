@@ -30,15 +30,34 @@
       controls.hidden = !canPrev && !canNext;
     }
 
+    // Clicks move by whole cards. While a smooth scroll is still running, the next
+    // click continues from where that scroll is heading, so fast clicks add up.
+    var cards = function () { return Array.prototype.slice.call(track.children); };
+    var leftOf = function (card) { return card.offsetLeft - track.firstElementChild.offsetLeft; };
+    var pending = null;
+    var settle;
+
     controls.addEventListener("click", function (e) {
       var btn = e.target.closest("button");
       if (!btn) return;
-      var card = track.firstElementChild;
-      var step = card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
-      track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: reduceQuery.matches ? "auto" : "smooth" });
+      var list = cards();
+      var index = pending;
+      if (index === null) {
+        var from = track.scrollLeft;
+        index = 0;
+        list.forEach(function (card, i) {
+          if (Math.abs(leftOf(card) - from) < Math.abs(leftOf(list[index]) - from)) index = i;
+        });
+      }
+      pending = Math.max(0, Math.min(list.length - 1, index + Number(btn.dataset.dir)));
+      track.scrollTo({ left: leftOf(list[pending]), behavior: reduceQuery.matches ? "auto" : "smooth" });
     });
 
-    track.addEventListener("scroll", update, { passive: true });
+    track.addEventListener("scroll", function () {
+      update();
+      clearTimeout(settle);
+      settle = setTimeout(function () { pending = null; }, 150);
+    }, { passive: true });
     window.addEventListener("resize", update);
     update();
   });
