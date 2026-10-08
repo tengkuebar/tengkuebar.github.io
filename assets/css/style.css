@@ -24,6 +24,7 @@
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --dur-press: 150ms;
   --dur-ui: 200ms;
+  --dur-exit: 120ms;
   interpolate-size: allow-keywords;
 
   color-scheme: light dark;
@@ -372,6 +373,17 @@ pre {
   border: 1px solid var(--border);
   border-radius: 0.375rem;
   overflow: hidden;
+  transition: transform var(--dur-press) var(--ease-out), border-color var(--dur-press) ease;
+}
+
+.shots a:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .shots a:hover {
+    border-color: var(--link);
+  }
 }
 
 .shots img {
@@ -385,7 +397,7 @@ pre {
 /* Screenshot viewer opened by assets/js/lightbox.js */
 .lightbox {
   opacity: 0;
-  transition: opacity 120ms var(--ease-out), display 120ms allow-discrete, overlay 120ms allow-discrete;
+  transition: opacity var(--dur-exit) var(--ease-out), display var(--dur-exit) allow-discrete, overlay var(--dur-exit) allow-discrete;
   width: 100vw;
   height: 100vh;
   max-width: none;
@@ -649,9 +661,7 @@ pre {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroller-btn,
-  .scroller::before,
-  .scroller::after { transition: none; }
+  .scroller-btn:active:not(:disabled) { transform: none; }
 }
 
 
@@ -668,6 +678,7 @@ header.band { view-transition-name: site-header; }
   .btn,
   .nav-list a { transition: none; }
   .btn:active,
+  .shots a:active,
   .lightbox button:active { transform: none; }
   .lightbox button,
   .lightbox-stage img,

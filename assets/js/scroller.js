@@ -37,6 +37,12 @@
     var pending = null;
     var settle;
 
+    // Forget the pending target once scrolling has stopped, including when a click causes no scroll
+    function armSettle() {
+      clearTimeout(settle);
+      settle = setTimeout(function () { pending = null; }, 150);
+    }
+
     controls.addEventListener("click", function (e) {
       var btn = e.target.closest("button");
       if (!btn) return;
@@ -51,12 +57,12 @@
       }
       pending = Math.max(0, Math.min(list.length - 1, index + Number(btn.dataset.dir)));
       track.scrollTo({ left: leftOf(list[pending]), behavior: reduceQuery.matches ? "auto" : "smooth" });
+      armSettle();
     });
 
     track.addEventListener("scroll", function () {
       update();
-      clearTimeout(settle);
-      settle = setTimeout(function () { pending = null; }, 150);
+      armSettle();
     }, { passive: true });
     window.addEventListener("resize", update);
     update();
