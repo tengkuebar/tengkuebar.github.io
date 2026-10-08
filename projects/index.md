@@ -78,4 +78,36 @@ These are study and team projects. I label each one so you know what it was and 
     <p class="muted">Built with Pi-hole, Docker Desktop, Tailscale and nmap.</p>
     <p><a href="https://github.com/tengkuebar/pihole-tailscale">View on GitHub</a></p>
   </li>
+  <li class="card">
+    <h3>DomainCheck</h3>
+    <p class="muted">Personal project, built with an AI coding assistant</p>
+    <p>A web app that checks a domain's email and website security and explains the results in plain English. You enter a domain and get a score, ranked fixes with steps for Microsoft 365, Google Workspace and cPanel, and a PDF report. It uses only passive checks: DNS records, the TLS certificate and the home page.</p>
+    <p><strong>My role:</strong> I set the requirements and the scope, made the design decisions and reviewed the work. Claude Code, an AI coding assistant, wrote the code under my direction.</p>
+    <details class="more">
+    <summary>Details and screenshots</summary>
+    <h4>What it checks</h4>
+    <ul>
+      <li>Nine checks: SPF, DMARC, DKIM, the TLS certificate and versions, HTTPS and HSTS, security headers, cookie flags and CAA.</li>
+      <li>A tenth check asks for a short fixed list of sensitive files, such as <code>.env</code>. It is built but switched off, because the app can't prove that the user owns the domain.</li>
+    </ul>
+    <h4>Security</h4>
+    <ul>
+      <li>The app fetches whatever domain a visitor types, so every outbound request goes through one safe fetcher. It resolves the name first and refuses private, loopback and cloud-metadata addresses. It connects to the address it checked, so a DNS answer that changes can't redirect the request, and it re-checks every redirect. It also caps time and response size.</li>
+      <li>Tests cover each of those cases, including a domain that points at an internal address and a redirect to one. A test fails if any other code opens its own connection.</li>
+      <li>The app also has a strict content security policy, CSRF protection and rate limits. A GitHub Actions workflow runs the tests, ruff, Bandit and pip-audit.</li>
+    </ul>
+    <h4>Limits</h4>
+    <ul>
+      <li>Anyone can scan any domain, and the rate limits are per IP address, which is easy to get around.</li>
+      <li>It has not been tested with a real screen reader. It is tested against fake DNS and web servers and a local TLS server, and it has been run against one real site. It is not deployed yet.</li>
+    </ul>
+    <ul class="shots">
+      <li><a href="{{ '/assets/img/domaincheck/landing.webp' | relative_url }}"><img src="{{ '/assets/img/domaincheck/landing.webp' | relative_url }}" alt="DomainCheck home page with a domain field and a sample report preview" loading="lazy"></a></li>
+      <li><a href="{{ '/assets/img/domaincheck/dashboard.webp' | relative_url }}"><img src="{{ '/assets/img/domaincheck/dashboard.webp' | relative_url }}" alt="DomainCheck report with a score of 67 out of 100, three area cards and fixes ranked by score points" loading="lazy"></a></li>
+      <li><a href="{{ '/assets/img/domaincheck/findings.webp' | relative_url }}"><img src="{{ '/assets/img/domaincheck/findings.webp' | relative_url }}" alt="List of findings with filter buttons and an expanded security headers finding showing evidence and fix steps" loading="lazy"></a></li>
+    </ul>
+    <p class="muted">Screenshots show sample data from a demo mode, not a live scan.</p>
+    </details>
+    <p class="muted">Built with Python, FastAPI, ReportLab, pytest, ruff, Bandit, pip-audit, GitHub Actions and Claude Code.</p>
+  </li>
 </ul>
