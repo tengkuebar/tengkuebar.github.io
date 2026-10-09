@@ -41,10 +41,18 @@
 
   const show = (n) => {
     current = (n + links.length) % links.length;
-    img.src = links[current].href;
-    img.alt = links[current].querySelector('img').alt;
-    count.textContent = `${current + 1} of ${links.length}`;
-    setZoom(false);
+    const swap = () => {
+      img.src = links[current].href;
+      img.alt = links[current].querySelector('img').alt;
+      count.textContent = `${current + 1} of ${links.length}`;
+      setZoom(false);
+    };
+    // Blur the old shot for a moment while the next one loads, unless it is the first open
+    // or the visitor prefers reduced motion.
+    if (!dialog.open || matchMedia('(prefers-reduced-motion: reduce)').matches) return swap();
+    img.classList.add('is-swapping');
+    img.addEventListener('load', () => img.classList.remove('is-swapping'), { once: true });
+    swap();
   };
 
   links.forEach((a, n) => a.addEventListener('click', (e) => {
