@@ -60,14 +60,20 @@ clip: true
   </div>
 </section>
 
-<section class="feature-row" aria-labelledby="apps-h">
-  <div class="feature-media" role="img" aria-label="Placeholder for an app screenshot">
-    <span>[App screenshot]</span>
-  </div>
+<section class="feature-row media-lg" aria-labelledby="apps-h">
+  <a class="feature-media has-image" href="{{ '/projects/domaincheck/' | relative_url }}">
+    <img src="{{ '/assets/img/domaincheck/showcase.webp' | relative_url }}" alt="Browser window showing the DomainCheck GitHub repository: its file list and a README that describes a plain-English email security checker" width="1800" height="1350" loading="lazy">
+  </a>
   <div>
     <p class="kicker">03 &middot; Building</p>
     <h2 id="apps-h">Building new apps</h2>
-    <p>I build apps to try out ideas. [Your latest app and what it does.] One example is <a href="{{ '/projects/domaincheck/' | relative_url }}">DomainCheck</a>, a security checker I designed and directed with an AI coding assistant.</p>
-    <ul class="tags"><li>[Language]</li><li>[Framework]</li><li>[Tool]</li></ul>
+    <p>I build apps to try out ideas. My latest is <a href="{{ '/projects/domaincheck/' | relative_url }}">DomainCheck</a>, a security checker that turns a domain into a plain-English email security report with a score and fix steps. I designed it and directed an AI coding assistant to build it.</p>
+    <ul class="tags has-icons">
+      <li><img src="{{ '/assets/img/logos/python.svg' | relative_url }}" alt="" width="16" height="16">Python</li>
+      <li><img src="{{ '/assets/img/logos/fastapi.svg' | relative_url }}" alt="" width="16" height="16">FastAPI</li>
+      <li><img src="{{ '/assets/img/logos/html5.svg' | relative_url }}" alt="" width="16" height="16">HTML</li>
+      <li><img src="{{ '/assets/img/logos/css3.svg' | relative_url }}" alt="" width="16" height="16">CSS</li>
+      <li><img src="{{ '/assets/img/logos/claude.svg' | relative_url }}" alt="" width="16" height="16">Claude</li>
+    </ul>
   </div>
 </section>
