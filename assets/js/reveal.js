@@ -4,7 +4,7 @@
 (() => {
   if (!('IntersectionObserver' in window)) return;
 
-  const sel = 'main h2, main .card, main .game, main .timeline > li, main .entry, main .strip, main .contact-strip, main .reveal';
+  const sel = 'main h2, main .card, main .game, main .timeline > li, main .entry, main .strip, main .contact-strip, main .feature-row, main .reveal';
   const fold = window.innerHeight;
   const els = [...document.querySelectorAll(sel)].filter((el) => el.getBoundingClientRect().top > fold);
   if (!els.length) return;
