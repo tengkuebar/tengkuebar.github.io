@@ -1398,6 +1398,66 @@ pre {
   margin-top: 1rem;
 }
 
+/* Volunteering page and the compact list on the resume */
+.vol-head {
+  padding-top: 1rem;
+}
+
+.vol-head .lead {
+  margin: 0.5rem 0 1.5rem;
+  max-width: 60ch;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.back-link {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.vol-list-wrap .feature-row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.feature-row .org {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.feature-row ul:not(.tags) {
+  margin: 0.9rem 0 0;
+  padding-left: 1.25rem;
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+.feature-row li + li {
+  margin-top: 0.3rem;
+}
+
+.vol-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  line-height: 1.65;
+}
+
+.vol-list li + li {
+  margin-top: 0.35rem;
+}
+
+.vol-list span {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.vol-more {
+  margin: 1rem 0 0;
+  font-weight: 600;
+}
+
 /* Phones and narrow windows */
 @media (max-width: 40em) {
   main.container {

@@ -76,47 +76,14 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
 
     <section aria-labelledby="vol-h">
       <h2 id="vol-h">Volunteering</h2>
-      <div class="entry">
-        <h3>Publications Manager</h3>
-        <p class="meta">Sharing For Surrounding 2019 (poverty alleviation). Jul 2019, one month.</p>
-        <ul>
-          <li>Prepared the donation event by running its media publicity.</li>
-          <li>Worked with the food bureau to prepare the basic needs items and transfer them to the event location.</li>
-          <li>Worked with other volunteers on advertising to potential donors.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>General Volunteer</h3>
-        <p class="meta">Brotherhood Of Harmony: Deliver Salam &amp; Smile Campaign (arts and culture). May 2018, one month.</p>
-        <ul>
-          <li>Helped prepare the event by creating posters and graphical materials.</li>
-          <li>Gathered photos during the event to share on social media and publicise its benefits.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>Publications Assistant</h3>
-        <p class="meta">Majelis Musyawarah Tertinggi (MMT) XXV 2017 (education). Oct 2017, one month.</p>
-        <ul>
-          <li>Prepared the presentation materials the committee needed for the event.</li>
-          <li>Prepared the graphical posters used to advertise it.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>Publications Assistant</h3>
-        <p class="meta">Indonesian Day 2017 (arts and culture). Sep 2017, one month.</p>
-        <ul>
-          <li>Gathered photos and videos of participants throughout the one-week event.</li>
-          <li>Made the graphical posters used to advertise it.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>Publications Assistant</h3>
-        <p class="meta">Psychology and Life 4 Conference. Apr 2017, one month.</p>
-        <ul>
-          <li>Prepared graphical media and design, and promoted the event on social media and with physical posters.</li>
-          <li>Helped the organiser with the slides and materials needed during the event.</li>
-        </ul>
-      </div>
+      <ul class="vol-list">
+        <li><strong>Publications Manager</strong>, Sharing For Surrounding 2019. <span>Jul 2019</span></li>
+        <li><strong>General Volunteer</strong>, Brotherhood Of Harmony: Deliver Salam &amp; Smile Campaign. <span>May 2018</span></li>
+        <li><strong>Publications Assistant</strong>, Majelis Musyawarah Tertinggi (MMT) XXV 2017. <span>Oct 2017</span></li>
+        <li><strong>Publications Assistant</strong>, Indonesian Day 2017. <span>Sep 2017</span></li>
+        <li><strong>Publications Assistant</strong>, Psychology and Life 4 Conference. <span>Apr 2017</span></li>
+      </ul>
+      <p class="vol-more"><a href="{{ '/volunteering/' | relative_url }}">See details and photos &rarr;</a></p>
     </section>
 
     <section aria-labelledby="proj-h">

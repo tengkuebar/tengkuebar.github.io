@@ -23,7 +23,7 @@ redirect_from: /about/
 </section>
 
 <section class="why" aria-label="Why I do this">
-  <p>I want to work in ICT support because I like helping people. When someone's laptop or account stops working, they're stressed, and fixing it for them feels good.</p>
+  <p>I like trying new things, working out why something is broken, and helping the person who is stuck. When a laptop or account stops working, I enjoy tracing the cause and connecting the dots. Then I get to give someone their day back.</p>
 </section>
 
 <section aria-labelledby="featured-heading">
