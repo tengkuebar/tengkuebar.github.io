@@ -8,11 +8,11 @@ redirect_from: /about/
     <p class="eyebrow rise">Melbourne &middot; Open to work</p>
     <h1 class="rise d2">I like getting people&rsquo;s tech working again.</h1>
     <p class="lead rise d3">I&rsquo;m Syarif, a graduate ICT support engineer with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for ICT support engineer and entry-level cybersecurity roles.</p>
-    <p class="hero-actions rise d4">
+    <p class="hero-actions">
       <a class="btn" href="{{ '/resume/' | relative_url }}">View resume</a>
       <a class="btn btn-secondary" href="mailto:{{ site.email }}">Email me</a>
     </p>
-    <p class="fineprint rise d4">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
+    <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
   </div>
   <!-- Placeholder. Replace this div with: <img class="photo" src="{{ '/assets/img/me.webp' | relative_url }}" alt="Photo of Syarif"> -->
   <div class="photo-ph rise d3" role="img" aria-label="Placeholder for a portrait photo">

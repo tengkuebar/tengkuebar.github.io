@@ -39,7 +39,8 @@
     }
   };
 
-  const show = (n) => {
+  // fromKeyboard skips the blur: arrow keys repeat quickly and should feel instant
+  const show = (n, fromKeyboard = false) => {
     current = (n + links.length) % links.length;
     const swap = () => {
       img.src = links[current].href;
@@ -47,11 +48,16 @@
       count.textContent = `${current + 1} of ${links.length}`;
       setZoom(false);
     };
-    // Blur the old shot for a moment while the next one loads, unless it is the first open
-    // or the visitor prefers reduced motion.
-    if (!dialog.open || matchMedia('(prefers-reduced-motion: reduce)').matches) return swap();
+    // Blur the old shot for a moment while the next one loads, for button clicks only.
+    // Skipped on first open, for keyboard, and for visitors who prefer reduced motion.
+    if (!dialog.open || fromKeyboard || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      img.classList.remove('is-swapping');
+      return swap();
+    }
     img.classList.add('is-swapping');
-    img.addEventListener('load', () => img.classList.remove('is-swapping'), { once: true });
+    const done = () => img.classList.remove('is-swapping');
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
     swap();
   };
 
@@ -72,7 +78,7 @@
   });
 
   dialog.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft' && links.length > 1) show(current - 1);
-    else if (e.key === 'ArrowRight' && links.length > 1) show(current + 1);
+    if (e.key === 'ArrowLeft' && links.length > 1) show(current - 1, true);
+    else if (e.key === 'ArrowRight' && links.length > 1) show(current + 1, true);
   });
 })();
