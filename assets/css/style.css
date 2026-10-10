@@ -1072,6 +1072,7 @@ main img.cert-badge {
 
 .project-row .thumb-fit {
   object-fit: contain;
+  object-position: center;
   background: var(--tint);
 }
 
@@ -1479,28 +1480,12 @@ main img.cert-badge {
   margin-top: 1rem;
 }
 
-/* Volunteering page and the compact list on the resume */
-.vol-head {
-  padding-top: 1rem;
-}
-
-.vol-head .lead {
-  margin: 0.5rem 0 1.5rem;
-  max-width: 60ch;
-  font-size: 1.2rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-}
-
+/* Shared by case-study pages */
 .back-link {
   display: inline-block;
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-}
-
-.vol-list-wrap .feature-row:last-child {
-  border-bottom: 1px solid var(--border);
 }
 
 .feature-row .org {
@@ -1522,26 +1507,6 @@ main img.cert-badge {
 /* The tag pills sit in a wrapping row, so they must not inherit the list item spacing above */
 .feature-row .tags li + li {
   margin-top: 0;
-}
-
-.vol-list {
-  margin: 0;
-  padding-left: 1.25rem;
-  line-height: 1.65;
-}
-
-.vol-list li + li {
-  margin-top: 0.35rem;
-}
-
-.vol-list span {
-  color: var(--text-muted);
-  white-space: nowrap;
-}
-
-.vol-more {
-  margin: 1rem 0 0;
-  font-weight: 600;
 }
 
 /* Short looping clip inside a feature row */
