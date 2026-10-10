@@ -76,6 +76,36 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
       </div>
     </section>
 
+    <section aria-labelledby="proj-h">
+      <h2 id="proj-h">Projects</h2>
+      <div class="entry">
+        <h3>BeyondReAim team web platform, ICT support, testing and security (FIT5120)</h3>
+        <p class="meta">Monash University</p>
+        <ul>
+          <li>Set up the team's laptops to run the app and its tools locally, and resolved installation problems.</li>
+          <li>Tested each iteration (user, system and security testing) and flagged high-risk gaps against agreed standards.</li>
+          <li>Added rate limiting, and with developers fixed a CORS issue and moved admin database access to least privilege.</li>
+          <li>Ran Nuclei scans and set up SonarQube, then wrote the security report for the team.</li>
+          <li>Co-wrote handover documents: system specification, setup, troubleshooting and incident response guides.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="edu-h">
+      <h2 id="edu-h">Education</h2>
+      <div class="entry">
+        <h3>Master of Cybersecurity</h3>
+        <p class="meta">Monash University, Melbourne, Australia. Graduating October 2026.</p>
+        <ul>
+          <li>Coursework in threat detection, network security and secure systems, with a vulnerability scanning practical.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Bachelor of Technology, Computer and Information Systems Security (Information Assurance)</h3>
+        <p class="meta">International Islamic University Malaysia. Completed.</p>
+      </div>
+    </section>
+
     <section aria-labelledby="vol-h">
       <h2 id="vol-h">Volunteering</h2>
       <div class="entry">
@@ -118,36 +148,6 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
           <li>Prepared graphical media and design, and promoted the event on social media and with physical posters.</li>
           <li>Helped the organiser with the slides and materials needed during the event.</li>
         </ul>
-      </div>
-    </section>
-
-    <section aria-labelledby="proj-h">
-      <h2 id="proj-h">Projects</h2>
-      <div class="entry">
-        <h3>BeyondReAim team web platform, ICT support, testing and security (FIT5120)</h3>
-        <p class="meta">Monash University</p>
-        <ul>
-          <li>Set up the team's laptops to run the app and its tools locally, and resolved installation problems.</li>
-          <li>Tested each iteration (user, system and security testing) and flagged high-risk gaps against agreed standards.</li>
-          <li>Added rate limiting, and with developers fixed a CORS issue and moved admin database access to least privilege.</li>
-          <li>Ran Nuclei scans and set up SonarQube, then wrote the security report for the team.</li>
-          <li>Co-wrote handover documents: system specification, setup, troubleshooting and incident response guides.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section aria-labelledby="edu-h">
-      <h2 id="edu-h">Education</h2>
-      <div class="entry">
-        <h3>Master of Cybersecurity</h3>
-        <p class="meta">Monash University, Melbourne, Australia. Graduating October 2026.</p>
-        <ul>
-          <li>Coursework in threat detection, network security and secure systems, with a vulnerability scanning practical.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>Bachelor of Technology, Computer and Information Systems Security (Information Assurance)</h3>
-        <p class="meta">International Islamic University Malaysia. Completed.</p>
       </div>
     </section>
 
