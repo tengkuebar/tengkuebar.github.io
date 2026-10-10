@@ -706,18 +706,78 @@ pre {
   font-size: 0.9rem;
 }
 
-/* Certificate cards share rows, so names, issuers, status and links line up across cards */
+/* Certificate cards: official badge on the left, text on the right */
 .cert-grid {
-  row-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
-.cert-grid .card {
-  display: grid;
-  grid-row: span 4;
-  grid-template-rows: subgrid;
-  row-gap: 0;
-  align-content: start;
-  margin-bottom: 1.25rem;
+.cert-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.25rem;
+}
+
+.cert-badge {
+  flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 200ms var(--ease-out);
+}
+
+main img.cert-badge {
+  border: 0;
+}
+
+.cert-badge-ph,
+.cert-badge-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.cert-badge-ph {
+  background: var(--tint);
+  border: 2px dashed var(--accent);
+}
+
+.cert-badge-soon {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  color: #7d8a99;
+}
+
+.cert-body {
+  min-width: 0;
+}
+
+.cert-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.cert-card p {
+  margin: 0.35rem 0 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cert-card:hover .cert-badge:not(.cert-badge-soon) {
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-badge {
+    transition: none;
+  }
 }
 
 /* Experience timeline on the home page */
@@ -1590,6 +1650,24 @@ pre {
   .clip-toggle:hover {
     background: rgb(0 0 0 / 0.8);
   }
+}
+
+/* Darkens the page around a playing clip. clip.js moves this frame over the video. */
+.clip-spot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0 100vmax rgb(8 12 20 / 0.78);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms var(--ease-out);
+}
+
+.clip-spot.on {
+  opacity: 1;
+  transition-duration: 350ms;
 }
 
 /* Phones and narrow windows */

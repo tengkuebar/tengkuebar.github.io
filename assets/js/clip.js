@@ -4,6 +4,34 @@
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 
+  // One fixed "spotlight" frame that sits over the playing clip. Its huge box-shadow darkens
+  // everything around the clip, so no other element needs a z-index change.
+  const spot = document.createElement('div');
+  spot.className = 'clip-spot';
+  spot.setAttribute('aria-hidden', 'true');
+  document.body.append(spot);
+  let lit = null;
+  let queued = false;
+
+  const place = () => {
+    queued = false;
+    if (!lit) return;
+    const r = lit.getBoundingClientRect();
+    spot.style.width = r.width + 'px';
+    spot.style.height = r.height + 'px';
+    spot.style.transform = `translate(${r.left}px, ${r.top}px)`;
+  };
+  const queuePlace = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(place);
+  };
+  addEventListener('scroll', queuePlace, { passive: true });
+  addEventListener('resize', queuePlace);
+
+  const light = (frame) => { lit = frame; place(); spot.classList.add('on'); };
+  const dim = (frame) => { if (lit === frame) { lit = null; spot.classList.remove('on'); } };
+
   document.querySelectorAll('.clip').forEach((video) => {
     const button = video.parentElement.querySelector('.clip-toggle');
     let userPaused = reduce.matches;
@@ -20,8 +48,10 @@
       else { userPaused = true; video.pause(); sync(); }
     });
     video.addEventListener('click', () => button.click());
-    video.addEventListener('pause', sync);
-    video.addEventListener('play', sync);
+    const frame = video.parentElement;
+    video.addEventListener('pause', () => { sync(); dim(frame); });
+    video.addEventListener('ended', () => dim(frame));
+    video.addEventListener('play', () => { sync(); light(frame); });
 
     new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

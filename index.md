@@ -69,11 +69,14 @@ redirect_from: /about/
   <h2 id="certs-heading">Certificates</h2>
   <ul class="card-grid cert-grid">
     {% for cert in site.data.certs %}
-    <li class="card">
-      <h3>{{ cert.name }}</h3>
-      <p class="muted">{{ cert.issuer }}</p>
-      <p><span class="badge{% if cert.status == 'In progress' %} badge-progress{% endif %}">{{ cert.status }}</span></p>
-      {% if cert.url and cert.url != "" %}<p><a href="{{ cert.url }}" rel="noopener">{{ cert.link_label | default: "Verify" }}</a></p>{% endif %}
+    <li class="card cert-card">
+      {% if cert.badge and cert.badge != "" %}<img class="cert-badge" src="{{ cert.badge | relative_url }}" alt="{{ cert.name }} badge" width="72" height="72" loading="lazy">{% elsif cert.status == 'In progress' %}<span class="cert-badge cert-badge-soon" aria-hidden="true">Not yet earned</span>{% else %}<span class="cert-badge cert-badge-ph" aria-hidden="true">Badge</span>{% endif %}
+      <div class="cert-body">
+        <h3>{{ cert.name }}</h3>
+        <p class="muted">{{ cert.issuer }}</p>
+        <p><span class="badge{% if cert.status == 'In progress' %} badge-progress{% endif %}">{{ cert.status }}</span></p>
+        {% if cert.url and cert.url != "" %}<p><a href="{{ cert.url }}" rel="noopener">{{ cert.link_label | default: "Verify" }}</a></p>{% endif %}
+      </div>
     </li>
     {% endfor %}
   </ul>

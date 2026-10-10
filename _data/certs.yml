@@ -2,16 +2,20 @@
 # status is either Earned or In progress.
 # url is the public link. link_label is the text of the link on the card.
 # A card shows its link only when url is not empty.
+# badge is an optional path to the official badge image, for example /assets/img/certs/google-it-support.webp.
+# Leave it out for a dashed placeholder; an In progress certificate always shows an empty slot.
 
 - name: Google IT Support Professional Specialization
   issuer: Google
   status: Earned
+  badge: /assets/img/certs/google-it-support.webp
   url: "https://www.coursera.org/account/accomplishments/specialization/YJ6LU7FRYP3U"
   link_label: "View on Coursera"
 
 - name: Certified in Cybersecurity (CC)
   issuer: ISC2
   status: Earned
+  badge: /assets/img/certs/isc2-cc.webp
   url: "https://www.credly.com/badges/832ed40d-18f7-49f8-b00c-d1b3b51aa7d1/public_url"
   link_label: "Verify on Credly"
 
