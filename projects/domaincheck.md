@@ -19,22 +19,22 @@ lightbox: true
   <section class="case-section" aria-labelledby="checks-h">
     <h2 id="checks-h">What it checks</h2>
     <ul>
-      <li>Nine checks: SPF, DMARC, DKIM, the TLS certificate and versions, HTTPS and HSTS, security headers, cookie flags and CAA.</li>
+      <li>Nine live checks: SPF, DMARC, DKIM, the TLS certificate and versions, HTTPS and HSTS, security headers, cookie flags and CAA.</li>
       <li>A tenth check asks for a short fixed list of sensitive files, such as <code>.env</code>. It is built but switched off, because the app can't prove that the user owns the domain.</li>
     </ul>
   </section>
 
   <section class="case-section" aria-labelledby="security-h">
-    <h2 id="security-h">Security</h2>
+    <h2 id="security-h">How the app protects itself</h2>
     <ul>
-      <li>The app fetches whatever domain a visitor types, so every outbound request goes through one safe fetcher. It resolves the name first and refuses private, loopback and cloud-metadata addresses. It connects to the address it checked, so a DNS answer that changes can't redirect the request, and it re-checks every redirect. It also caps time and response size.</li>
+      <li>The app fetches whatever domain a visitor types, which is a server-side request forgery risk. So every outbound request goes through one safe fetcher. It resolves the name first and refuses private, loopback and cloud-metadata addresses. It connects to the address it checked, so a DNS answer that changes can't redirect the request, and it re-checks every redirect. It also caps time and response size.</li>
       <li>Tests cover each of those cases, including a domain that points at an internal address and a redirect to one. A test fails if any other code opens its own connection.</li>
       <li>The app also has a strict content security policy, CSRF protection and rate limits. A GitHub Actions workflow runs the tests, ruff, Bandit and pip-audit.</li>
     </ul>
   </section>
 
   <section class="case-section" aria-labelledby="limits-h">
-    <h2 id="limits-h">Limits</h2>
+    <h2 id="limits-h">Limits and what is untested</h2>
     <ul>
       <li>Anyone can scan any domain, and the rate limits are per IP address, which is easy to get around.</li>
       <li>It has not been tested with a real screen reader. It is tested against fake DNS and web servers and a local TLS server, and it has been run against one real site. It is not deployed yet.</li>

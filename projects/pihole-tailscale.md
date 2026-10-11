@@ -9,7 +9,7 @@ lightbox: true
   <a class="back-link" href="{{ '/projects/' | relative_url }}">&larr; All projects</a>
   <p class="kind">Personal home lab project</p>
   <h1>Pi-hole over Tailscale</h1>
-  <p class="intro">I set up network-wide ad blocking with Pi-hole in Docker and reached it from my phone over Tailscale. I tested it with nmap, and its ports could not be reached from outside the tailnet.</p>
+  <p class="intro">I run Pi-hole in Docker for network-wide ad blocking and reach it from my phone over Tailscale, with no router port forwarded. I tested the setup with nmap: the Pi-hole ports were filtered from outside and open only on the tailnet.</p>
 
   <div class="strip">
     <div><h2>My role</h2><p>I set it up and tested it myself</p></div>
@@ -18,25 +18,25 @@ lightbox: true
   </div>
 
   <section class="case-section" aria-labelledby="setup-h">
-    <h2 id="setup-h">Setup</h2>
+    <h2 id="setup-h">Design and fixes</h2>
     <ul>
-      <li>No router port is forwarded, so nothing is open to the home network or the internet. My phone uses the Pi-hole as its DNS on mobile data through the Tailscale tunnel.</li>
-      <li>Chose Tailscale over a self-hosted WireGuard server, because I don't control the router and the ISP may use CGNAT, so port forwarding wasn't an option.</li>
+      <li>Nothing is open to the home network or the internet, because no router port is forwarded. My phone uses the Pi-hole as its DNS on mobile data, through the Tailscale tunnel.</li>
+      <li>Chose Tailscale over a self-hosted WireGuard server. I don't control the router and the ISP may use CGNAT, so port forwarding wasn't an option.</li>
       <li>Bound Pi-hole's DNS and admin ports to the Tailscale address only.</li>
-      <li>Fixed a startup problem. A fresh container inherited Tailscale DNS, which is Pi-hole itself, so it couldn't download its blocklists. I gave the container its own resolvers.</li>
+      <li>Fixed a startup problem. A fresh container inherited Tailscale DNS, which is the Pi-hole itself, so it couldn't download its blocklists. I gave the container its own resolvers.</li>
     </ul>
   </section>
 
   <section class="case-section" aria-labelledby="testing-h">
-    <h2 id="testing-h">Testing</h2>
+    <h2 id="testing-h">How I tested it</h2>
     <ul>
-      <li>Ran nmap scans from the same Wi-Fi, from another network and from inside the tailnet. The ports were filtered from outside and open only on the tailnet.</li>
+      <li>Ran nmap scans from the same Wi-Fi, from another network and from inside the tailnet. The ports were filtered from outside and open only inside the tailnet.</li>
       <li>Opened a test domain on my phone over 4G. The query showed in the Pi-hole log, first forwarded and then blocked after I added the domain to the denylist.</li>
     </ul>
   </section>
 
   <section class="case-section" aria-labelledby="limits-h">
-    <h2 id="limits-h">Limits</h2>
+    <h2 id="limits-h">Limits and trade-offs</h2>
     <ul>
       <li>The laptop is a single point of failure. If it sleeps, DNS stops for every device on the tailnet.</li>
       <li>Docker on Windows hides client addresses, so every query shows one internal address.</li>

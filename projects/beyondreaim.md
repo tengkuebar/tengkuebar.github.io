@@ -9,46 +9,55 @@ lightbox: true
   <a class="back-link" href="{{ '/projects/' | relative_url }}">&larr; All projects</a>
   <p class="kind">Team project, Monash University (FIT5120)</p>
   <h1>BeyondReAim</h1>
-  <p class="intro">A web platform that helps young Australian workers and recent graduates see how AI may change their industry. Users pick an industry, take a guided self-assessment and get a personal risk profile.</p>
+  <p class="intro">A web platform that helps young Australian workers and recent graduates see how AI may change their industry. Users pick an industry, take a guided self-assessment and get a personal risk profile. My part was the team's security, testing and ICT support.</p>
 
   <div class="strip">
-    <div><h2>My role</h2><p>ICT support, testing and security for the team</p></div>
+    <div><h2>My role</h2><p>Security, testing and ICT support for a team project</p></div>
     <div><h2>Built with</h2><ul class="tags"><li>React</li><li>TypeScript</li><li>Vite</li><li>Tailwind CSS</li><li>NeonDB</li><li>Vercel</li></ul></div>
     <div><h2>Links</h2><p><a href="https://www.beyondai-saltjs.me/">Open the app</a></p></div>
   </div>
 
-  <section class="case-section" aria-labelledby="support-h">
-    <h2 id="support-h">Support</h2>
+  <section class="case-section" aria-labelledby="security-h">
+    <h2 id="security-h">Security findings and fixes</h2>
     <ul>
-      <li>Set up the team's laptops so each one could run the app and its tools locally, and fixed installation problems as they came up.</li>
+      <li>Found security bugs, including a CORS misconfiguration, and worked with the developers to diagnose, fix and retest each one.</li>
+      <li>Found that the app connected to the database with admin access. I worked with the team's database member to move it to least-privilege access.</li>
+      <li>Added rate limiting to the app.</li>
+      <li>Ran Nuclei scans and set up SonarQube.</li>
     </ul>
   </section>
 
   <section class="case-section" aria-labelledby="testing-h">
     <h2 id="testing-h">Testing and review</h2>
     <ul>
-      <li>Tested the app in every iteration, covering user, system and security testing, to keep it to the agreed quality standards.</li>
+      <li>Tested every iteration with user, system and security testing, against the quality standards the team agreed.</li>
       <li>Reviewed the project for high-risk areas and gaps against the agreed standards and procedures, and reported them to the team.</li>
     </ul>
   </section>
 
-  <section class="case-section" aria-labelledby="security-h">
-    <h2 id="security-h">Security</h2>
+  <section class="case-section" aria-labelledby="support-h">
+    <h2 id="support-h">ICT support</h2>
     <ul>
-      <li>Found security bugs and worked with the developers to diagnose, fix and retest them, including a CORS misconfiguration.</li>
-      <li>Added rate limiting to the app.</li>
-      <li>Found that the app connected to the database with admin access, and worked with the team's database member to move it to least-privilege access.</li>
-      <li>Ran Nuclei scans and set up SonarQube.</li>
+      <li>Set up the team's laptops so each one could run the app and its tools locally, and fixed installation problems as they came up.</li>
     </ul>
   </section>
 
   <section class="case-section" aria-labelledby="docs-h">
     <h2 id="docs-h">Documentation</h2>
     <ul>
-      <li>Wrote the security report and, with the team, the handover documents, including the system specification and guides for setup, troubleshooting, incident response, and backup and restore.</li>
+      <li>Wrote the team's security report. It covers:
+        <ul>
+          <li>a risk assessment of the app;</li>
+          <li>an incident response plan;</li>
+          <li>identity and access management, with an access matrix;</li>
+          <li>the privacy, legal and ethical issues to consider when building the app;</li>
+          <li>real security incidents related to the tools, packages and software the app uses;</li>
+          <li>a backup and restore plan.</li>
+        </ul>
+      </li>
+      <li>Worked with the team on the handover documents: the system specification and the setup and troubleshooting guides.</li>
     </ul>
   </section>
-
   <section class="case-section" aria-labelledby="shots-h">
     <h2 id="shots-h">Screenshots</h2>
     <ul class="shots">
