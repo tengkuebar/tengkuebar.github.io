@@ -44,9 +44,12 @@ clip: true
 </section>
 
 <section class="feature-row flip" aria-labelledby="tools-h">
-  <div class="feature-media" role="img" aria-label="Placeholder for a photo of a Flipper Zero">
-    <span>[Flipper Zero photo]</span>
-  </div>
+  <figure class="feature-media has-image annotated">
+    <img src="{{ '/assets/img/flipper.webp' | relative_url }}" alt="A hand holding a Flipper Zero with a Flipper Zero Dev Board Pro and an antenna attached on top" width="900" height="1200" loading="lazy">
+    <span class="marker" style="left: 28%; top: 19%" aria-hidden="true">1</span>
+    <span class="marker" style="left: 50%; top: 36%" aria-hidden="true">2</span>
+    <span class="marker" style="left: 66%; top: 62%" aria-hidden="true">3</span>
+  </figure>
   <div>
     <p class="kicker">02 &middot; Security tools</p>
     <h2 id="tools-h">Experimenting with hacking tools</h2>
@@ -56,6 +59,11 @@ clip: true
       <li>Copying and writing NFC tags.</li>
       <li>Tinkering with BadUSB.</li>
     </ul>
+    <ol class="photo-key" aria-label="Key to the numbered photo">
+      <li><span class="num" aria-hidden="true">1</span>External antenna</li>
+      <li><span class="num" aria-hidden="true">2</span>Flipper Zero Dev Board Pro</li>
+      <li><span class="num" aria-hidden="true">3</span>Flipper Zero</li>
+    </ol>
     <ul class="tags"><li>Flipper Zero</li><li>NFC</li><li>BadUSB</li><li>Home network</li></ul>
   </div>
 </section>

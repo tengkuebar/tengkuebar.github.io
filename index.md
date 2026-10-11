@@ -14,12 +14,10 @@ redirect_from: /about/
     </p>
     <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
   </div>
-  <!-- Placeholder. Replace this div with: <img class="photo" src="{{ '/assets/img/me.webp' | relative_url }}" alt="Photo of Syarif"> -->
-  <div class="photo-ph rise d3" role="img" aria-label="Placeholder for a portrait photo">
-    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
-    <span>Your photo here</span>
-    <small>Portrait, 4:5</small>
-  </div>
+  <figure class="photo-card rise d3">
+    <img src="{{ '/assets/img/me.webp' | relative_url }}" width="600" height="600" alt="Syarif outdoors, smiling, in a black jacket">
+    <figcaption>Hi, that&rsquo;s me.</figcaption>
+  </figure>
 </section>
 
 <section class="why" aria-label="Why I do this">

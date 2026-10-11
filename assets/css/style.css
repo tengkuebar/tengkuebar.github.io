@@ -412,6 +412,38 @@ pre {
   font-size: 0.8rem;
 }
 
+/* Snapshot card for the Home hero photo: a tilted white print with a handwritten caption.
+   Uses the independent rotate property so the page-load rise (transform) doesn't cancel it. */
+
+.photo-card {
+  flex: 0 1 24rem;
+  width: 100%;
+  max-width: 24rem;
+  margin: 0;
+  padding: 0.9rem 0.9rem 0.75rem;
+  background: #ffffff;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.9rem 2rem rgb(26 35 50 / 0.22);
+  rotate: 2.5deg;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.15rem;
+}
+
+.photo-card figcaption {
+  padding-top: 0.8rem;
+  color: #4a5568;
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
 .photo-ph.wide {
   aspect-ratio: 4 / 3;
   max-width: 30rem;
@@ -1546,6 +1578,60 @@ main img.cert-badge {
   object-fit: cover;
 }
 
+/* Photo with numbered markers and a key beside it (Hobbies, security tools). */
+.feature-media.annotated {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  max-width: 24rem;
+  width: 100%;
+  justify-self: center;
+}
+
+.marker,
+.photo-key .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1f6f6f;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.marker {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  margin: -1rem 0 0 -1rem;
+  border: 3px solid #ffffff;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+}
+
+.photo-key {
+  margin: 1.1rem 0 0;
+  padding: 0.9rem 1rem;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+}
+
+.photo-key li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.photo-key .num {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.8rem;
+}
+
 .feature-media.has-video {
   position: relative;
   margin: 0;
@@ -1677,6 +1763,7 @@ main img.cert-badge {
 
   .photo-ph,
   .photo,
+  .photo-card,
   .photo-ph.wide {
     max-width: 20rem;
     margin-inline: auto;
