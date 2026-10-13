@@ -1476,6 +1476,200 @@ main img.cert-badge {
   margin-top: 0.3rem;
 }
 
+/* Resume page section navigation: a sticky strip that shows where you are and collapses to one line.
+   The strip is 3rem tall open or collapsed, so toggling it never moves the page below. */
+.section-nav {
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  position: sticky;
+  top: 4.5rem;
+  z-index: 4;
+  margin: 0 0 1.75rem;
+}
+
+.sn-card {
+  position: relative;
+  height: 3rem;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.4rem 1rem rgb(26 35 50 / 0.08);
+}
+
+.sn-tabs,
+.sn-summary {
+  position: absolute;
+  inset: 0 3rem 0 0;
+  transition: opacity 150ms ease, filter 150ms ease, visibility 0s linear 0s;
+}
+
+.sn-tabs {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.sn-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.sn-list {
+  display: flex;
+  height: 100%;
+  min-width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sn-list li {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.sn-list a {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 150ms ease, transform 120ms var(--ease-out);
+}
+
+.sn-list a:active {
+  transform: scale(0.97);
+}
+
+.sn-list a[aria-current="location"] {
+  color: var(--btn-text);
+}
+
+/* One marker only: a solid pill behind the current section, sliding between tabs */
+.sn-indicator {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: var(--w, 0);
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: var(--btn-bg);
+  transform: translateX(var(--x, 0));
+  opacity: 0;
+}
+
+.sn-ready .sn-indicator {
+  opacity: 1;
+  transition: transform 200ms var(--ease-in-out), width 200ms var(--ease-in-out);
+}
+
+.sn-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  opacity: 0;
+  filter: blur(2px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease, filter 150ms ease, visibility 0s linear 150ms;
+}
+
+.sn-position {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sn-label {
+  color: var(--link);
+  font-weight: 700;
+}
+
+.section-nav.is-collapsed .sn-tabs {
+  opacity: 0;
+  filter: blur(2px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease, filter 150ms ease, visibility 0s linear 150ms;
+}
+
+.section-nav.is-collapsed .sn-summary {
+  opacity: 1;
+  filter: none;
+  visibility: visible;
+  transition: opacity 150ms ease, filter 150ms ease, visibility 0s linear 0s;
+}
+
+.sn-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  padding: 0;
+  background: var(--bg);
+  border: 0;
+  border-left: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sn-toggle[hidden] {
+  display: none;
+}
+
+.sn-toggle svg {
+  transition: transform 200ms var(--ease-out);
+}
+
+.is-collapsed .sn-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Headings land below the sticky header and strip when a link jumps to them */
+.resume-main h2[id] {
+  scroll-margin-top: 9rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sn-list a:hover {
+    color: var(--text);
+  }
+
+  .sn-toggle:hover {
+    background: var(--tint);
+  }
+}
+
+@media (max-width: 40em) {
+  /* The site header isn't pinned here, so the strip sits near the top of the screen */
+  .section-nav {
+    top: 0.5rem;
+  }
+
+  .resume-main h2[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sn-ready .sn-indicator,
+  .sn-toggle svg {
+    transition: none;
+  }
+}
+
 @media (max-width: 54em) {
   .resume-layout {
     grid-template-columns: minmax(0, 1fr);

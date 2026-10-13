@@ -4,6 +4,7 @@ permalink: /resume/
 redirect_from:
   - /cv/
   - /volunteering/
+sectionnav: true
 description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer with a Master of Cybersecurity, based in Melbourne.
 ---
 
@@ -37,6 +38,26 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
 
   <div class="resume-main">
 
+    <nav class="section-nav" id="section-nav" aria-label="Resume sections">
+      <div class="sn-card">
+        <div class="sn-tabs">
+          <ul class="sn-list">
+            <li><a href="#summary-h" data-full="Professional summary">Summary</a></li>
+            <li><a href="#skills-h" data-full="Key skills">Skills</a></li>
+            <li><a href="#exp-h">Experience</a></li>
+            <li><a href="#proj-h">Projects</a></li>
+            <li><a href="#edu-h">Education</a></li>
+            <li><a href="#vol-h">Volunteering</a></li>
+            <li><a href="#pub-h">Publications</a></li>
+          </ul>
+          <span class="sn-indicator" aria-hidden="true"></span>
+        </div>
+        <div class="sn-summary" aria-hidden="true"><span class="sn-position"></span><span class="sn-label"></span></div>
+        <button class="sn-toggle" type="button" aria-expanded="true" aria-label="Collapse section navigation" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"></path></svg>
+        </button>
+      </div>
+    </nav>
     <section class="rise d2" aria-labelledby="summary-h">
       <h2 id="summary-h">Professional summary</h2>
       <p class="summary">Graduate ICT support engineer with a Master of Cybersecurity from Monash University. I diagnose and resolve installation and software problems, test systems for functionality and security, and write technical documentation. I hold the Google IT Support Professional Specialization and ISC2 CC, and I am preparing for Microsoft AZ-900.</p>
