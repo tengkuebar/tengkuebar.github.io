@@ -12,13 +12,19 @@
   document.body.append(spot);
   let lit = null;
   let queued = false;
+  let sized = '';
 
   const place = () => {
     queued = false;
     if (!lit) return;
     const r = lit.getBoundingClientRect();
-    spot.style.width = r.width + 'px';
-    spot.style.height = r.height + 'px';
+    // Resizing repaints the big shadow, so only do it when the clip's size actually changes
+    const size = r.width + 'x' + r.height;
+    if (size !== sized) {
+      sized = size;
+      spot.style.width = r.width + 'px';
+      spot.style.height = r.height + 'px';
+    }
     spot.style.transform = `translate(${r.left}px, ${r.top}px)`;
   };
   const queuePlace = () => {

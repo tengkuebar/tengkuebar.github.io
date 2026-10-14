@@ -13,7 +13,6 @@
   const heads = links.map((a) => document.getElementById(a.getAttribute('href').slice(1)));
   if (!scroller || !toggle || heads.some((h) => !h)) return;
 
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const KEY = 'resume-nav-open';
   let active = -1;
   let pinned = null;
@@ -41,8 +40,8 @@
     indicator.style.setProperty('--x', a.offsetLeft + 4 + 'px');
     indicator.style.setProperty('--w', a.offsetWidth - 8 + 'px');
     const target = a.offsetLeft - (scroller.clientWidth - a.offsetWidth) / 2;
-    const smooth = nav.classList.contains('sn-ready') && !reduced.matches;
-    scroller.scrollTo({ left: Math.max(0, target), behavior: smooth ? 'smooth' : 'auto' });
+    // Snap rather than smooth-scroll: the browser's scroll timing can't be matched to the pill's slide
+    scroller.scrollTo({ left: Math.max(0, target), behavior: 'auto' });
   };
 
   const setActive = (index) => {

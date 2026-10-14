@@ -774,7 +774,6 @@ pre {
   height: 4.5rem;
   border-radius: 50%;
   object-fit: contain;
-  transition: transform 200ms var(--ease-out);
 }
 
 main img.cert-badge {
@@ -816,18 +815,6 @@ main img.cert-badge {
 
 .cert-card p {
   margin: 0.35rem 0 0;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cert-card:hover .cert-badge:not(.cert-badge-soon) {
-    transform: scale(1.05);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cert-badge {
-    transition: none;
-  }
 }
 
 /* Experience timeline on the home page */
@@ -988,7 +975,7 @@ main img.cert-badge {
    It only touches elements below the fold, and only when it runs, so content never stays hidden. */
 .rv {
   transition-property: opacity, translate, border-color, transform;
-  transition-duration: 320ms, 320ms, 180ms, 200ms;
+  transition-duration: 240ms, 240ms, 180ms, 200ms;
   transition-delay: var(--d, 0ms), var(--d, 0ms), 0ms, 0ms;
   transition-timing-function: var(--ease-out), var(--ease-out), ease, var(--ease-out);
 }
@@ -1001,6 +988,12 @@ main img.cert-badge {
 .rv-on .rv.in {
   opacity: 1;
   translate: 0 0;
+}
+
+/* Set by reveal.js while an in-page link jumps, so the target shows at once instead of fading in */
+.rv-jump .rv {
+  transition-duration: 0ms;
+  transition-delay: 0ms;
 }
 
 /* Page-load entrance for the Home hero only. Buttons and fine print are left out so the
@@ -1539,7 +1532,8 @@ main img.cert-badge {
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: color 150ms ease, transform 120ms var(--ease-out);
+  /* The colour swap waits 80ms so it lands as the pill arrives, not before it */
+  transition: color 120ms ease 80ms, transform 120ms var(--ease-out);
 }
 
 .sn-list a:active {
@@ -1643,7 +1637,7 @@ main img.cert-badge {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .sn-list a:hover {
+  .sn-list a:not([aria-current]):hover {
     color: var(--text);
   }
 
@@ -1928,7 +1922,7 @@ main img.cert-badge {
   top: 0;
   z-index: 40;
   border-radius: 0.75rem;
-  box-shadow: 0 0 0 100vmax rgb(8 12 20 / 0.78);
+  box-shadow: 0 0 0 100vmax rgb(8 12 20 / 0.6);
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms var(--ease-out);
@@ -1936,7 +1930,7 @@ main img.cert-badge {
 
 .clip-spot.on {
   opacity: 1;
-  transition-duration: 350ms;
+  transition-duration: 250ms;
 }
 
 /* Phones and narrow windows */
@@ -2076,5 +2070,25 @@ main img.cert-badge {
 
   .feature-row.flip .feature-media {
     order: 0;
+  }
+}
+
+/* Reduced motion, part 2: these override rules defined after the first reduced-motion block,
+   so they sit last. Press scales and hover movement go; colour and fade changes stay. */
+@media (prefers-reduced-motion: reduce) {
+  .btn:active,
+  .card-link:active,
+  .shots a:active,
+  .lightbox button:active,
+  .clip-toggle:active,
+  .sn-list a:active,
+  .project-row:active .thumb,
+  .project-row:hover .thumb,
+  .project-row:hover .read-more span {
+    transform: none;
+  }
+
+  .nav-list a::after {
+    transition: none;
   }
 }

@@ -10,9 +10,9 @@
   if (!els.length) return;
 
   els.forEach((el) => {
-    // 50ms stagger between neighbours, capped so long lists don't drag
+    // 50ms stagger between neighbours, capped at 100ms so long lists don't drag
     const index = [...el.parentElement.children].indexOf(el);
-    el.style.setProperty('--d', Math.min(index, 4) * 50 + 'ms');
+    el.style.setProperty('--d', Math.min(index, 2) * 50 + 'ms');
     el.classList.add('rv');
   });
 
@@ -22,8 +22,21 @@
       entry.target.classList.add('in');
       io.unobserve(entry.target);
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0, rootMargin: '0px 0px -48px 0px' });
 
   document.documentElement.classList.add('rv-on');
+
+  // An in-page link jumps straight to a section that may still be hidden. Show it at once
+  // instead of landing on a blank gap while it fades in.
+  let jumpTimer = 0;
+  const skipFade = () => {
+    document.documentElement.classList.add('rv-jump');
+    clearTimeout(jumpTimer);
+    jumpTimer = setTimeout(() => document.documentElement.classList.remove('rv-jump'), 700);
+  };
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('a[href^="#"]')) skipFade();
+  });
+  window.addEventListener('hashchange', skipFade);
   els.forEach((el) => io.observe(el));
 })();
