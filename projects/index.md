@@ -10,7 +10,7 @@ Each project is labelled as a team, personal or home lab project, with my part s
 
 <div class="project-rows">
   <a class="project-row" href="{{ '/projects/beyondreaim/' | relative_url }}">
-    <img class="thumb" src="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}" alt="" loading="lazy">
+    <span class="thumb-frame"><img class="thumb" src="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}" alt="" loading="lazy"></span>
     <div>
       <p class="kind">Team project, Monash University (FIT5120)</p>
       <h2>BeyondReAim</h2>
@@ -20,7 +20,7 @@ Each project is labelled as a team, personal or home lab project, with my part s
     </div>
   </a>
   <a class="project-row" href="{{ '/projects/pihole-tailscale/' | relative_url }}">
-    <img class="thumb thumb-fit" src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" alt="" loading="lazy">
+    <span class="thumb-frame"><img class="thumb thumb-fit" src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" alt="" loading="lazy"></span>
     <div>
       <p class="kind">Personal home lab project</p>
       <h2>Pi-hole over Tailscale</h2>
@@ -30,7 +30,7 @@ Each project is labelled as a team, personal or home lab project, with my part s
     </div>
   </a>
   <a class="project-row" href="{{ '/projects/domaincheck/' | relative_url }}">
-    <img class="thumb" src="{{ '/assets/img/domaincheck/dashboard.webp' | relative_url }}" alt="" loading="lazy">
+    <span class="thumb-frame"><img class="thumb" src="{{ '/assets/img/domaincheck/dashboard.webp' | relative_url }}" alt="" loading="lazy"></span>
     <div>
       <p class="kind">Personal project, built with an AI coding assistant</p>
       <h2>DomainCheck</h2>

@@ -4,15 +4,17 @@
 (() => {
   if (!('IntersectionObserver' in window)) return;
 
-  const sel = 'main h2, main .card, main .game, main .timeline > li, main .entry, main .strip, main .contact-strip, main .feature-row, main .reveal';
+  const sel = 'main h2, main .card, main .game, main .timeline > li, main .entry, main .strip, main .contact-strip, main .feature-row, main .reveal, main .tiles > li, main .achievement, main .ticket, main .slot-panel';
   const fold = window.innerHeight;
   const els = [...document.querySelectorAll(sel)].filter((el) => el.getBoundingClientRect().top > fold);
   if (!els.length) return;
 
   els.forEach((el) => {
-    // 50ms stagger between neighbours, capped at 100ms so long lists don't drag
+    // 50ms stagger between neighbours, capped at 100ms so long lists don't drag.
+    // The achievements and game-cover lists are short, so they get 60ms steps up to item 4.
     const index = [...el.parentElement.children].indexOf(el);
-    el.style.setProperty('--d', Math.min(index, 2) * 50 + 'ms');
+    const list = el.classList.contains('achievement') || el.classList.contains('game');
+    el.style.setProperty('--d', Math.min(index, list ? 3 : 2) * (list ? 60 : 50) + 'ms');
     el.classList.add('rv');
   });
 

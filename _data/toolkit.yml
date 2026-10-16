@@ -1,0 +1,26 @@
+# Toolkit slots shown on the Home page. Each slot lists the tools and where they were used.
+# Keep the "used" lines factual: they point at real projects and coursework.
+
+- name: Network
+  tools: "Nmap, Wireshark"
+  used: "Pi-hole over Tailscale: exposure checked with nmap."
+
+- name: Web
+  tools: "Burp Suite, Nuclei"
+  used: "BeyondReAim: Nuclei scans and a CORS fix."
+
+- name: Code quality
+  tools: "SonarQube"
+  used: "BeyondReAim: SonarQube setup and the security report."
+
+- name: Endpoints
+  tools: "Metasploit"
+  used: "Monash vulnerability scanning practical."
+
+- name: Support
+  tools: "Setups, installs, incident guides"
+  used: "FIT5120 team: laptops, testing and handover documents."
+
+- name: Data
+  tools: "Oracle, SQL"
+  used: "IT internship: Oracle loads, error logs and SQL fixes."

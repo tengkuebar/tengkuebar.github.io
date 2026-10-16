@@ -11,10 +11,7 @@ clip: true
     <h1 class="rise d2">Outside work, I play, tinker and build.</h1>
     <p class="lead rise d3">Three things fill my spare time: gaming, experimenting with security tools, and building apps. I believe learning and experiencing new things builds imagination and creativity, and each of these is a way to do both.</p>
   </div>
-  <div class="photo-ph wide rise d3" role="img" aria-label="Placeholder for a photo of Syarif's setup">
-    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="5"></rect><path d="M7 10v5M4.5 12.5h5"></path><circle cx="16" cy="11" r="1"></circle><circle cx="18.5" cy="13.5" r="1"></circle></svg>
-    <span>[Your setup]</span>
-  </div>
+  <img class="photo wide rise d3" src="{{ '/assets/img/setup.webp' | relative_url }}" width="1000" height="750" alt="Syarif at his desk, smiling, with a code editor on one monitor and a project open on a vertical second monitor">
 </section>
 
 <section class="feature-row" aria-labelledby="gaming-h">
@@ -36,10 +33,10 @@ clip: true
 <section aria-labelledby="playing-heading">
   <h2 id="playing-heading">Favourite games</h2>
   <ul class="cover-row">
-    <li class="game"><img class="game-img" src="{{ '/assets/img/games/cyberpunk-2077.webp' | relative_url }}" alt="Cyberpunk 2077 Ultimate Edition key art" width="600" height="800" loading="lazy"><h3>Cyberpunk 2077</h3><p>Action RPG</p></li>
-    <li class="game"><img class="game-img" src="{{ '/assets/img/games/monster-hunter-wilds.webp' | relative_url }}" alt="A hunter fighting a large monster in Monster Hunter Wilds" width="600" height="800" loading="lazy"><h3>Monster Hunter Wilds</h3><p>Action RPG</p></li>
-    <li class="game"><img class="game-img" src="{{ '/assets/img/games/escape-from-tarkov.webp' | relative_url }}" alt="First-person view at a gas station in Escape from Tarkov" width="600" height="800" loading="lazy"><h3>Escape from Tarkov</h3><p>FPS</p></li>
-    <li class="game"><img class="game-img" src="{{ '/assets/img/games/fallout.webp' | relative_url }}" alt="A lone figure facing the New Vegas skyline in Fallout" width="600" height="800" loading="lazy"><h3>Fallout series</h3><p>RPG</p></li>
+    <li class="game"><img class="game-img" src="{{ '/assets/img/games/cyberpunk-2077.webp' | relative_url }}" alt="Cyberpunk 2077 Ultimate Edition key art" width="600" height="800" loading="lazy"><span class="tile-bar" aria-hidden="true"></span><h3>Cyberpunk 2077</h3><p>Action RPG</p></li>
+    <li class="game"><img class="game-img" src="{{ '/assets/img/games/monster-hunter-wilds.webp' | relative_url }}" alt="A hunter fighting a large monster in Monster Hunter Wilds" width="600" height="800" loading="lazy"><span class="tile-bar" aria-hidden="true"></span><h3>Monster Hunter Wilds</h3><p>Action RPG</p></li>
+    <li class="game"><img class="game-img" src="{{ '/assets/img/games/escape-from-tarkov.webp' | relative_url }}" alt="First-person view at a gas station in Escape from Tarkov" width="600" height="800" loading="lazy"><span class="tile-bar" aria-hidden="true"></span><h3>Escape from Tarkov</h3><p>FPS</p></li>
+    <li class="game"><img class="game-img" src="{{ '/assets/img/games/fallout.webp' | relative_url }}" alt="A lone figure facing the New Vegas skyline in Fallout" width="600" height="800" loading="lazy"><span class="tile-bar" aria-hidden="true"></span><h3>Fallout series</h3><p>RPG</p></li>
   </ul>
 </section>
 

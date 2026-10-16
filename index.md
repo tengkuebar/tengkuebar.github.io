@@ -3,85 +3,121 @@ title: Home
 redirect_from: /about/
 ---
 
-<section class="hero">
+<section class="hero hero-home">
   <div class="hero-text">
-    <p class="eyebrow rise">Melbourne &middot; Open to work</p>
-    <h1 class="rise d2">I like getting people&rsquo;s tech working again.</h1>
-    <p class="lead rise d3">I&rsquo;m Syarif, a graduate ICT support engineer with a Master of Cybersecurity from Monash University. I&rsquo;m based in Melbourne and looking for ICT support engineer and entry-level cybersecurity roles.</p>
+    <h1 class="rise">I get people&rsquo;s tech working again.</h1>
+    <p class="lead rise d2">Graduate ICT support engineer in Melbourne, with a Master of Cybersecurity from Monash University. Looking for ICT support engineer and entry-level cybersecurity roles.</p>
     <p class="hero-actions">
-      <a class="btn" href="{{ '/resume/' | relative_url }}">View resume</a>
-      <a class="btn btn-secondary" href="mailto:{{ site.email }}">Email me</a>
+      <a class="btn" href="mailto:{{ site.email }}">Email me</a>
+      <a class="btn btn-secondary" href="{{ '/resume/' | relative_url }}">View resume</a>
     </p>
     <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
   </div>
-  <figure class="photo-card rise d3">
-    <img src="{{ '/assets/img/graduation.webp' | relative_url }}" width="800" height="1000" alt="Syarif in a graduation gown and cap, sitting on a wide staircase seen from above">
+  <figure class="hero-media rise d3">
+    <div class="hero-frame">
+      <img src="{{ '/assets/img/graduation.webp' | relative_url }}" width="800" height="1000" alt="Syarif in a graduation gown and cap, sitting on a wide staircase seen from above">
+    </div>
     <figcaption>Graduation day.</figcaption>
   </figure>
 </section>
 
-<section class="why" aria-label="Why I do this">
-  <p>I like trying new things, working out why something is broken, and helping the person who is stuck. When a laptop or account stops working, I enjoy tracing the cause and connecting the dots. Then I get to give someone their day back.</p>
-</section>
-
-<section aria-labelledby="featured-heading">
+<section class="library" aria-labelledby="featured-heading">
   <div class="section-head">
-    <h2 id="featured-heading">Selected projects</h2>
+    <h2 id="featured-heading">Projects</h2>
     <a href="{{ '/projects/' | relative_url }}">All projects</a>
   </div>
-  <ul class="card-grid">
+  <ul class="tiles">
     <li>
-      <a class="card card-link" href="{{ '/projects/beyondreaim/' | relative_url }}">
-        <img class="cover-img" src="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}" alt="" loading="lazy">
-        <span class="card-body">
-          <h3>BeyondReAim</h3>
-          <p class="muted">Team web platform. I handled testing, security fixes and ICT support.</p>
-          <span class="tagline">Team project &middot; Monash</span>
-        </span>
+      <a class="tile" href="{{ '/projects/beyondreaim/' | relative_url }}">
+        <span class="tile-frame"><img src="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}" width="1200" height="750" alt="" loading="lazy"></span>
+        <span class="tile-bar" aria-hidden="true"></span>
+        <h3>BeyondReAim</h3>
+        <p>Team web platform. Testing, security fixes and ICT support.</p>
       </a>
     </li>
     <li>
-      <a class="card card-link" href="{{ '/projects/pihole-tailscale/' | relative_url }}">
-        <img class="cover-img" src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" alt="" loading="lazy">
-        <span class="card-body">
-          <h3>Pi-hole over Tailscale</h3>
-          <p class="muted">Network-wide ad blocking, reachable only over the tailnet and checked with nmap.</p>
-          <span class="tagline">Home lab</span>
-        </span>
+      <a class="tile" href="{{ '/projects/pihole-tailscale/' | relative_url }}">
+        <span class="tile-frame"><img src="{{ '/assets/img/pihole/query-log-blocked.webp' | relative_url }}" width="1200" height="750" alt="" loading="lazy"></span>
+        <span class="tile-bar" aria-hidden="true"></span>
+        <h3>Pi-hole over Tailscale</h3>
+        <p>Ad blocking reachable only over the tailnet, checked with nmap.</p>
       </a>
     </li>
     <li>
-      <a class="card card-link" href="{{ '/projects/domaincheck/' | relative_url }}">
-        <img class="cover-img" src="{{ '/assets/img/domaincheck/dashboard.webp' | relative_url }}" alt="" loading="lazy">
-        <span class="card-body">
-          <h3>DomainCheck</h3>
-          <p class="muted">Passive domain security checks explained in plain English.</p>
-          <span class="tagline">Personal &middot; built with an AI assistant</span>
-        </span>
+      <a class="tile" href="{{ '/projects/domaincheck/' | relative_url }}">
+        <span class="tile-frame"><img src="{{ '/assets/img/domaincheck/dashboard.webp' | relative_url }}" width="1200" height="750" alt="" loading="lazy"></span>
+        <span class="tile-bar" aria-hidden="true"></span>
+        <h3>DomainCheck</h3>
+        <p>Passive domain security checks in plain English.</p>
       </a>
     </li>
   </ul>
 </section>
 
+<section class="about" aria-label="About me">
+  <p class="statement">I like trying new things, working out why something is broken, and helping the person who is stuck. Then I get to give them their day back.</p>
+  <div class="ticket" data-ticket aria-label="An example support ticket moving from reported to fixed">
+    <p class="ticket-tag">Support ticket</p>
+    <p class="ticket-title">Laptop won&rsquo;t join the office Wi-Fi</p>
+    <ol class="ticket-steps">
+      <li data-step="0" class="is-done">Reported</li>
+      <li data-step="1" class="is-done">Traced</li>
+      <li data-step="2" class="is-on">Fixed</li>
+    </ol>
+    <div class="ticket-track" aria-hidden="true"><div class="ticket-bar" data-ticket-bar></div></div>
+    <p class="ticket-text" data-ticket-text>Removed the old profile and rejoined. The user is back online and working.</p>
+  </div>
+</section>
+
 <section aria-labelledby="certs-heading">
-  <h2 id="certs-heading">Certificates</h2>
-  <ul class="card-grid cert-grid">
-    {% for cert in site.data.certs %}
-    <li class="card cert-card">
-      {% if cert.badge and cert.badge != "" %}<img class="cert-badge" src="{{ cert.badge | relative_url }}" alt="{{ cert.name }} badge" width="72" height="72" loading="lazy">{% elsif cert.status == 'In progress' %}<span class="cert-badge cert-badge-soon" aria-hidden="true">Not yet earned</span>{% else %}<span class="cert-badge cert-badge-ph" aria-hidden="true">Badge</span>{% endif %}
-      <div class="cert-body">
-        <h3>{{ cert.name }}</h3>
-        <p class="muted">{{ cert.issuer }}</p>
-        <p><span class="badge{% if cert.status == 'In progress' %} badge-progress{% endif %}">{{ cert.status }}</span></p>
-        {% if cert.url and cert.url != "" %}<p><a href="{{ cert.url }}" rel="noopener">{{ cert.link_label | default: "Verify" }}</a></p>{% endif %}
+  <h2 id="certs-heading">Achievements</h2>
+  <ul class="achievements">
+    <li class="achievement">
+      <span class="achievement-mark" aria-hidden="true">MC</span>
+      <div class="achievement-body">
+        <h3>Master of Cybersecurity</h3>
+        <p class="muted">Monash University</p>
       </div>
+      <span class="chip chip-done">Completed</span>
+    </li>
+    {% for cert in site.data.certs %}
+    <li class="achievement">
+      {% if cert.badge and cert.badge != "" %}<img class="achievement-badge" src="{{ cert.badge | relative_url }}" alt="{{ cert.name }} badge" width="72" height="72" loading="lazy">{% else %}<span class="achievement-mark" aria-hidden="true">AZ</span>{% endif %}
+      <div class="achievement-body">
+        <h3>{{ cert.name }}</h3>
+        <p class="muted">{{ cert.issuer }}{% if cert.url and cert.url != "" %} &middot; <a href="{{ cert.url }}" rel="noopener">{{ cert.link_label | default: "Verify" }}</a>{% endif %}</p>
+      </div>
+      <span class="chip{% if cert.status == 'In progress' %} chip-progress{% else %} chip-done{% endif %}">{% if cert.status == 'In progress' %}In progress{% else %}Unlocked{% endif %}</span>
     </li>
     {% endfor %}
   </ul>
 </section>
 
+<section aria-labelledby="toolkit-heading">
+  <h2 id="toolkit-heading">Toolkit</h2>
+  <p class="section-note">Pick a slot to see where I used it.</p>
+  <div class="toolkit" data-toolkit>
+    <div class="slot-grid">
+      {% for slot in site.data.toolkit %}
+      <button class="slot" type="button" data-tools="{{ slot.tools }}" data-used="{{ slot.used }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ slot.name }}</button>
+      {% endfor %}
+    </div>
+    <div class="slot-panel" aria-live="polite">
+      {% assign first = site.data.toolkit | first %}
+      <p class="slot-name" data-slot-name>{{ first.name }}</p>
+      <p class="slot-tools" data-slot-tools>{{ first.tools }}</p>
+      <p class="slot-used" data-slot-used>{{ first.used }}</p>
+    </div>
+  </div>
+  <noscript>
+    <ul class="slot-fallback">
+      {% for slot in site.data.toolkit %}<li><strong>{{ slot.name }}</strong>: {{ slot.tools }}. {{ slot.used }}</li>{% endfor %}
+    </ul>
+  </noscript>
+</section>
+
 <section aria-labelledby="work-heading">
-  <h2 id="work-heading">What I&rsquo;ve worked on</h2>
+  <h2 id="work-heading">Experience</h2>
   <ol class="timeline">
     <li>
       <h3>IT internship</h3>
@@ -112,12 +148,12 @@ redirect_from: /about/
   <p>There is more detail on the <a href="{{ '/resume/' | relative_url }}">resume page</a>.</p>
 </section>
 
-<section class="contact-strip" aria-labelledby="contact-heading">
-  <h2 id="contact-heading">Get in touch</h2>
-  <p>Email is the easiest way to reach me. I'm based in Melbourne, Victoria.</p>
+<section class="contact-field" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Hiring for ICT support or entry-level security? Let&rsquo;s talk.</h2>
+  <p>Email is the easiest way to reach me. I&rsquo;m based in Melbourne, Victoria, with full working rights in Australia.</p>
   <p class="contact-actions">
     <a class="btn" href="mailto:{{ site.email }}">Email me</a>
-    {% if site.linkedin_url != "" %}<a class="btn btn-secondary" href="{{ site.linkedin_url }}">LinkedIn</a>{% endif %}
-    <a class="btn btn-secondary" href="{{ site.resume_path | relative_url }}">Download resume (PDF)</a>
+    <a class="btn" href="{{ site.resume_path | relative_url }}">Download resume (PDF)</a>
+    {% if site.linkedin_url != "" %}<a class="btn" href="{{ site.linkedin_url }}">LinkedIn</a>{% endif %}
   </p>
 </section>

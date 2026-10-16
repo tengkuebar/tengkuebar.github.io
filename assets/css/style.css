@@ -1,36 +1,39 @@
-/* Ocean Depths theme, light and dark, refined. Tokens come from 02_design/03_theme.md. */
+/* Game library theme: blue-black ground, one green accent, square corners.
+   The earlier Ocean Depths light palette is replaced; the tokens keep their names. */
 
 :root {
-  --bg: #f1faee;
-  --card: #ffffff;
-  --band: #1a2332;
-  --band-text: #f1faee;
-  --band-link: #a8dadc;
-  --header-bg: rgb(241 250 238 / 0.85);
-  --text: #1a2332;
-  --text-muted: #4a5568;
-  --link: #1f6f6f;
-  --btn-bg: #1f6f6f;
-  --btn-bg-hover: #185a5a;
-  --btn-text: #ffffff;
-  --btn-alt: #1a2332;
-  --border: #cfe6e3;
-  --accent: #a8dadc;
-  --tint: #dff0ee;
-  --tag-bg: #e4f2ef;
-  --focus: #1f6f6f;
-  --code-bg: #111823;
-  --code-text: #e6f1ee;
+  --bg: #0d1117;
+  --card: #161c25;
+  --band: #161c25;
+  --band-text: #eef1f5;
+  --band-link: #35e07a;
+  --header-bg: rgb(13 17 23 / 0.9);
+  --text: #eef1f5;
+  --text-muted: #9aa4b2;
+  --link: #35e07a;
+  --btn-bg: #35e07a;
+  --btn-bg-hover: #6ff0a3;
+  --btn-text: #0d1117;
+  --btn-alt: #eef1f5;
+  --border: #2a3442;
+  --accent: #2a3442;
+  --tint: #161c25;
+  --tag-bg: #1f2733;
+  --focus: #35e07a;
+  --code-bg: #07120d;
+  --code-text: #2fe08a;
 
   --page-width: 48rem;
   --wide-width: 76rem;
-  --radius: 0.875rem;
+  --radius: 0;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --font: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   interpolate-size: allow-keywords;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 /* Dark palette, kept for a future toggle. It only applies when <html data-theme="dark"> is set,
@@ -99,15 +102,22 @@ h3 {
   letter-spacing: -0.015em;
 }
 
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
 h1 {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  letter-spacing: -0.025em;
-  line-height: 1.08;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.98;
   margin: 0 0 1rem;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 2.25rem;
+  line-height: 1;
   margin: 3rem 0 1rem;
 }
 
@@ -277,7 +287,7 @@ main img {
   min-height: 3rem;
   padding: 0 1.4rem;
   border: 2px solid var(--btn-bg);
-  border-radius: 0.625rem;
+  border-radius: 0;
   background: var(--btn-bg);
   color: var(--btn-text);
   font-weight: 600;
@@ -462,6 +472,11 @@ pre {
     transform: none;
   }
 }
+.photo {
+  object-fit: cover;
+}
+
+.photo.wide,
 .photo-ph.wide {
   aspect-ratio: 4 / 3;
   max-width: 30rem;
@@ -1088,6 +1103,827 @@ main img.cert-badge {
   view-transition-name: site-footer;
 }
 
+/* ---- Game library theme ---- */
+
+/* Square corners everywhere, to match the buttons and tiles. The clip button stays round. */
+.card-link .cover-img,
+.card-link .cover-ph,
+.shots a,
+.project-row .thumb,
+.game .cover-ph,
+.game .game-img,
+.feature-media,
+.sn-card,
+.sn-indicator,
+.tags li,
+.badge,
+.photo,
+.photo-ph,
+.clip-spot,
+pre {
+  border-radius: 0;
+}
+
+/* Email button at the end of the header nav, visible on every page */
+.nav-list {
+  align-items: center;
+}
+
+.nav-list a.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 1.1rem;
+  color: var(--btn-text);
+  font-weight: 600;
+}
+
+.nav-list a.nav-btn::after {
+  display: none;
+}
+
+/* Footer: the name returns at display size */
+.footer-main {
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.footer-role {
+  margin-top: 0.2rem !important;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  max-width: none;
+}
+
+.footer-sub {
+  padding-top: 0;
+  padding-bottom: 1.75rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Home page */
+.is-home main h2 {
+  margin-top: 0;
+}
+
+.is-home main > section + section {
+  margin-top: 6rem;
+}
+
+.hero-home {
+  gap: 2.5rem 4rem;
+  padding: 2.5rem 0 1rem;
+}
+
+.hero-home .hero-text {
+  flex: 1 1 34rem;
+}
+
+.hero-home h1 {
+  max-width: none;
+  font-size: clamp(2.75rem, 7vw, 4.75rem);
+  line-height: 0.92;
+}
+
+.hero-media {
+  flex: 0 1 28rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0;
+}
+
+.hero-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.hero-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  object-position: 50% 52%;
+}
+
+.hero-media figcaption {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Project tiles under the hero */
+.tiles {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.5rem;
+}
+
+.tiles > li {
+  max-width: none;
+}
+
+.tile {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 200ms var(--ease-out);
+}
+
+/* The frame clips the picture, so it can zoom on hover without growing past its edges */
+.tile-frame {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--card);
+}
+
+.tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 250ms var(--ease-out);
+}
+
+/* The bar fills from the left when a tile is active, and retracts a little faster */
+.tile-bar {
+  display: block;
+  height: 6px;
+  background: var(--btn-bg);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 120ms var(--ease-out);
+}
+
+.tile h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.tile p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.tile:focus-visible .tile-bar {
+  transform: scaleX(1);
+  transition-duration: 220ms;
+}
+
+.tile:active {
+  transform: scale(0.99);
+}
+
+/* About statement and the example ticket */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.statement {
+  flex: 1 1 24rem;
+  margin: 0;
+  max-width: 34ch;
+  font-size: 1.75rem;
+  line-height: 1.35;
+}
+
+.ticket {
+  flex: 1 1 24rem;
+  max-width: 34rem;
+  padding: 2rem;
+  background: var(--card);
+}
+
+.ticket-tag {
+  margin: 0 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.ticket-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.ticket-steps {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.ticket-steps li {
+  max-width: none;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  font-weight: 600;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.ticket-steps li.is-done {
+  background: #2a3442;
+}
+
+.ticket-steps li.is-on {
+  background: var(--stage, var(--btn-bg));
+  color: var(--btn-text);
+}
+
+.ticket-track {
+  height: 6px;
+  margin-bottom: 1.5rem;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* home.js sets the scale and --bar from the scroll position. No transition, so it tracks 1:1.
+   Without JavaScript it shows the finished state: full and green. */
+.ticket-bar {
+  height: 100%;
+  background: var(--bar, var(--btn-bg));
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.ticket-text {
+  min-height: 5.2rem;
+  margin: 0;
+  line-height: 1.55;
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+
+/* home.js sets this for a moment while the text changes: out fast, back in a little slower */
+.ticket-text.is-out {
+  opacity: 0;
+  transform: translateY(6px);
+  transition-duration: 120ms;
+}
+
+/* Achievements */
+.achievements {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 60rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.achievement {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: none;
+  padding: 1.25rem 1.5rem;
+  background: var(--card);
+}
+
+.achievement-badge,
+.achievement-mark {
+  flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.achievement-badge {
+  border: 0;
+  object-fit: contain;
+}
+
+.achievement-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--link);
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.achievement-body {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.achievement h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.achievement .muted {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+}
+
+.chip {
+  padding: 0.4rem 1rem;
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.chip {
+  position: relative;
+  isolation: isolate;
+}
+
+.chip-done {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* The green sits on its own layer so it can sweep in with a transform */
+.chip-done::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--btn-bg);
+  transform-origin: left;
+}
+
+/* Unlock beat. While a row is waiting to be revealed (.rv), its chip is dark and "locked" and its
+   badge is slightly small. Once reveal.js adds .in, the row lands, the badge settles, then the green
+   sweeps across the chip. --d is the row's own stagger delay. "In progress" never fills. */
+.achievement.rv .chip-done {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.achievement.rv .chip-done::before {
+  transform: scaleX(0);
+}
+
+.achievement.rv .achievement-badge,
+.achievement.rv .achievement-mark {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.achievement.rv.in .achievement-badge,
+.achievement.rv.in .achievement-mark {
+  opacity: 1;
+  transform: none;
+  transition: opacity 240ms var(--ease-out) calc(var(--d, 0ms) + 60ms), transform 240ms var(--ease-out) calc(var(--d, 0ms) + 60ms);
+}
+
+.achievement.rv.in .chip-done {
+  color: var(--btn-text);
+  transition: color 120ms ease calc(var(--d, 0ms) + 200ms);
+}
+
+.achievement.rv.in .chip-done::before {
+  transform: scaleX(1);
+  transition: transform 260ms var(--ease-out) calc(var(--d, 0ms) + 160ms);
+}
+
+/* Toolkit */
+.section-note {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.toolkit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.slot-grid {
+  flex: 1 1 28rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.slot {
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 1 / 1;
+  padding: 1rem;
+  border: 0;
+  background: var(--card);
+  color: var(--text);
+  font: 600 1.5rem/1.1 var(--font);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, transform 120ms var(--ease-out);
+}
+
+.slot:active {
+  transform: scale(0.97);
+}
+
+.slot[aria-pressed="true"] {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.slot-panel {
+  flex: 1 1 22rem;
+  padding: 2.5rem;
+  background: var(--card);
+}
+
+.slot-name {
+  margin: 0 0 1rem;
+  color: var(--link);
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.slot-tools {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.slot-used {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.slot-fallback {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  line-height: 1.7;
+}
+
+/* The detail text fades out quickly, home.js swaps it, then it fades back in a little slower.
+   Transitions, so a quick second pick retargets from where it is instead of restarting. */
+.slot-name,
+.slot-tools,
+.slot-used {
+  transition: opacity 120ms var(--ease-out), transform 120ms var(--ease-out);
+}
+
+.slot-name.is-swapping,
+.slot-tools.is-swapping,
+.slot-used.is-swapping {
+  opacity: 0;
+  transform: translateY(4px);
+  transition-duration: 80ms;
+}
+
+/* Contact: one block of accent colour */
+.contact-field {
+  padding: 4rem 2rem 4.5rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* The block wipes in from the left once, as it scrolls into view (home.js adds the classes) */
+.contact-field.wipe {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 420ms var(--ease-out);
+}
+
+.contact-field.wipe.wipe-in {
+  clip-path: inset(0);
+}
+
+/* Hobbies: the numbered markers on the Flipper photo pop in one after another (1, 2, 3) once the
+   row has been revealed. An animation with a backwards fill, so the hover scale below isn't delayed. */
+.marker {
+  transition: transform 150ms var(--ease-out), background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.photo-key li {
+  transition: color 150ms var(--ease-out);
+}
+
+.photo-key .num {
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.marker:nth-of-type(1) { --i: 0; }
+.marker:nth-of-type(2) { --i: 1; }
+.marker:nth-of-type(3) { --i: 2; }
+
+.feature-row.in .marker {
+  animation: marker-in 220ms var(--ease-out) calc(var(--d, 0ms) + 200ms + var(--i, 0) * 80ms) backwards;
+}
+
+@keyframes marker-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes marker-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* The screenshot link in the Building row: press feedback, and a slight zoom on hover */
+a.feature-media.has-image {
+  transition: transform 160ms var(--ease-out);
+}
+
+a.feature-media.has-image img {
+  transition: transform 250ms var(--ease-out);
+}
+
+a.feature-media.has-image:active {
+  transform: scale(0.98);
+}
+
+/* Favourite games (Hobbies): the whole card lifts, a green bar fills under the cover, and the title
+   turns green. The bar is the same one the Home project tiles use. */
+.game {
+  transition: transform 200ms var(--ease-out);
+}
+
+.game h3 {
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .game:hover {
+    transform: translateY(-6px);
+  }
+
+  /* The card moves as one piece, so the cover itself no longer lifts on its own */
+  .game:hover .game-img,
+  .game:hover .cover-ph {
+    transform: none;
+  }
+
+  .game:hover .tile-bar {
+    transform: scaleX(1);
+    transition-duration: 220ms;
+  }
+
+  .game:hover h3 {
+    color: var(--link);
+  }
+
+  /* A marker on the photo and its line in the key light up together, whichever one you hover:
+     the marker fills green and lifts, the key line goes to full text colour and its number fills green. */
+  .marker:hover,
+  .feature-row:has(.photo-key li:nth-child(1):hover) .marker:nth-of-type(1),
+  .feature-row:has(.photo-key li:nth-child(2):hover) .marker:nth-of-type(2),
+  .feature-row:has(.photo-key li:nth-child(3):hover) .marker:nth-of-type(3) {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    transform: scale(1.2);
+  }
+
+  .photo-key li:hover,
+  .feature-row:has(.marker:nth-of-type(1):hover) .photo-key li:nth-child(1),
+  .feature-row:has(.marker:nth-of-type(2):hover) .photo-key li:nth-child(2),
+  .feature-row:has(.marker:nth-of-type(3):hover) .photo-key li:nth-child(3) {
+    color: var(--text);
+  }
+
+  .photo-key li:hover .num,
+  .feature-row:has(.marker:nth-of-type(1):hover) .photo-key li:nth-child(1) .num,
+  .feature-row:has(.marker:nth-of-type(2):hover) .photo-key li:nth-child(2) .num,
+  .feature-row:has(.marker:nth-of-type(3):hover) .photo-key li:nth-child(3) .num {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+  }
+
+  a.feature-media.has-image:hover img {
+    transform: scale(1.02);
+  }
+}
+
+.contact-field h2 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+  color: inherit;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.contact-field p {
+  color: inherit;
+}
+
+.contact-field .btn {
+  background: var(--bg);
+  border-color: var(--bg);
+  color: var(--text);
+}
+
+.contact-field .btn:first-child {
+  color: var(--link);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tile:hover {
+    transform: translateY(-4px);
+  }
+
+  .tile:hover img {
+    transform: scale(1.06);
+  }
+
+  .tile:hover .tile-bar {
+    transform: scaleX(1);
+    transition-duration: 220ms;
+  }
+
+  .contact-field .btn:hover {
+    background: var(--card);
+    border-color: var(--card);
+    color: var(--text);
+  }
+}
+
+@media (max-width: 40em) {
+  /* The header isn't pinned on a phone and the page has its own Email button, so the nav one
+     would only wrap onto a row of its own */
+  .nav-cta {
+    display: none;
+  }
+
+  /* Badge and text share a row; the status chip drops underneath */
+  .achievement {
+    gap: 0.75rem 1rem;
+    padding: 1rem;
+  }
+
+  .achievement-badge,
+  .achievement-mark {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .achievement-body {
+    flex-basis: 10rem;
+  }
+
+  .achievement h3 {
+    font-size: 1.25rem;
+  }
+
+  .is-home main > section + section {
+    margin-top: 4rem;
+  }
+
+  .slot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .slot {
+    aspect-ratio: auto;
+    min-height: 5rem;
+  }
+
+  .slot-panel {
+    padding: 1.5rem;
+  }
+
+  .slot-name {
+    font-size: 2.75rem;
+  }
+
+  .ticket {
+    padding: 1.25rem;
+  }
+
+  .ticket-text {
+    min-height: 7.5rem;
+  }
+
+  .contact-field {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket-bar,
+  .tile,
+  .slot,
+  .tile-bar {
+    transition-property: opacity, background-color, color;
+  }
+
+  /* Hobbies: the game card doesn't lift, and the bar just appears */
+  .game:hover {
+    transform: none;
+  }
+
+  .game:hover .tile-bar {
+    opacity: 1;
+  }
+
+  /* Hobbies: markers fade in without scaling, and the screenshot link doesn't zoom */
+  .feature-row.in .marker {
+    animation-name: marker-fade;
+  }
+
+  .feature-row:has(.photo-key li:hover) .marker,
+  .marker:hover,
+  a.feature-media.has-image:hover img,
+  a.feature-media.has-image:active {
+    transform: none;
+  }
+
+  /* Text still fades, but nothing travels or scales */
+  .ticket-text.is-out {
+    transform: none;
+  }
+
+  /* Achievements: rows still fade, but chips show their final state and nothing scales */
+  .achievement.rv .chip-done {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+  }
+
+  .achievement.rv .chip-done::before {
+    display: none;
+  }
+
+  .achievement.rv .achievement-badge,
+  .achievement.rv .achievement-mark {
+    opacity: 1;
+    transform: none;
+  }
+
+  .slot-name.is-swapping,
+  .slot-tools.is-swapping,
+  .slot-used.is-swapping {
+    transform: none;
+  }
+
+  .tile-bar {
+    transform: none;
+    opacity: 0;
+  }
+
+  .tile.is-active .tile-bar,
+  .tile:focus-visible .tile-bar {
+    opacity: 1;
+  }
+
+  .contact-field.wipe {
+    clip-path: none;
+    opacity: 0;
+    transition: opacity 240ms ease;
+  }
+
+  .contact-field.wipe.wipe-in {
+    opacity: 1;
+  }
+
+  .tile:hover,
+  .tile:hover img {
+    transform: none;
+  }
+}
+
 ::view-transition-group(root) {
   animation-duration: 180ms;
 }
@@ -1108,15 +1944,24 @@ main img.cert-badge {
   text-decoration: none;
 }
 
+/* The frame holds the border and clips the picture, so the picture can zoom on hover without
+   growing past its edges. */
+.project-row .thumb-frame {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
 .project-row .thumb {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border: 1px solid var(--border);
-  border-radius: 0.625rem;
+  height: 100%;
+  border: 0;
   object-fit: cover;
   object-position: top;
-  transition: transform 200ms var(--ease-out);
+  transition: transform 250ms var(--ease-out);
 }
 
 .project-row .thumb-fit {
@@ -1174,7 +2019,7 @@ main img.cert-badge {
 
 @media (hover: hover) and (pointer: fine) {
   .project-row:hover .thumb {
-    transform: scale(1.015);
+    transform: scale(1.06);
   }
 
   .project-row:hover h2 {
@@ -1975,6 +2820,7 @@ main img.cert-badge {
 
   .photo-ph,
   .photo,
+  .photo.wide,
   .photo-card,
   .photo-ph.wide {
     max-width: 20rem;

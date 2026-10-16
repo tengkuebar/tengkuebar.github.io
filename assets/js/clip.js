@@ -1,9 +1,7 @@
-// Short muted gameplay clips. They play only while on screen, never autoplay for visitors who
-// prefer reduced motion, and always have a pause/play button. Without JavaScript the poster
+// Short muted gameplay clips. They never start by themselves: a visitor presses play (the button
+// or the video). A playing clip pauses when it scrolls out of view. Without JavaScript the poster
 // image shows and the video stays stopped.
 (() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-
   // One fixed "spotlight" frame that sits over the playing clip. Its huge box-shadow darkens
   // everything around the clip, so no other element needs a z-index change.
   const spot = document.createElement('div');
@@ -40,7 +38,6 @@
 
   document.querySelectorAll('.clip').forEach((video) => {
     const button = video.parentElement.querySelector('.clip-toggle');
-    let userPaused = reduce.matches;
 
     const sync = () => {
       const playing = !video.paused;
@@ -50,8 +47,8 @@
     const play = () => { video.play().then(sync, sync); };
 
     button.addEventListener('click', () => {
-      if (video.paused) { userPaused = false; play(); }
-      else { userPaused = true; video.pause(); sync(); }
+      if (video.paused) play();
+      else { video.pause(); sync(); }
     });
     video.addEventListener('click', () => button.click());
     const frame = video.parentElement;
@@ -59,10 +56,11 @@
     video.addEventListener('ended', () => dim(frame));
     video.addEventListener('play', () => { sync(); light(frame); });
 
+    // The clip never starts by itself. Once someone presses play it keeps going, and it pauses
+    // when scrolled out of view. Coming back, they press play again.
     new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) { if (!userPaused) play(); }
-        else video.pause();
+        if (!entry.isIntersecting) video.pause();
       });
     }, { threshold: 0.4 }).observe(video);
 
