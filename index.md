@@ -15,8 +15,8 @@ redirect_from: /about/
     <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia.</p>
   </div>
   <figure class="photo-card rise d3">
-    <img src="{{ '/assets/img/me.webp' | relative_url }}" width="600" height="600" alt="Syarif outdoors, smiling, in a black jacket">
-    <figcaption>Hi, that&rsquo;s me.</figcaption>
+    <img src="{{ '/assets/img/graduation.webp' | relative_url }}" width="800" height="1000" alt="Syarif in a graduation gown and cap, sitting on a wide staircase seen from above">
+    <figcaption>Graduation day.</figcaption>
   </figure>
 </section>
 
