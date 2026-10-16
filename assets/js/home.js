@@ -97,12 +97,38 @@
   if (toolkit) {
     const slots = [...toolkit.querySelectorAll('.slot')];
     const name = toolkit.querySelector('[data-slot-name]');
-    const tools = toolkit.querySelector('[data-slot-tools]');
+    const use = toolkit.querySelector('[data-slot-use]');
     const used = toolkit.querySelector('[data-slot-used]');
-    const bits = [name, tools, used];
+    const linkWrap = toolkit.querySelector('.slot-link');
+    const link = toolkit.querySelector('[data-slot-link]');
+    const bits = [name, use, used, linkWrap];
+    const panel = toolkit.querySelector('.slot-panel');
     let current = slots[0];
     let intent = 0;
     let swapTimer = 0;
+    const fill = (slot) => {
+      name.textContent = slot.dataset.name;
+      use.textContent = slot.dataset.use;
+      used.textContent = slot.dataset.used;
+      link.textContent = slot.dataset.linkLabel + ' →';
+      link.href = slot.dataset.link;
+    };
+    // Give the panel the height of its tallest slot, so switching slots never changes the layout
+    // (the tile grid stretches to match the panel, so a changing panel made the tiles grow and shrink).
+    const fit = () => {
+      panel.style.minHeight = '';
+      let tallest = 0;
+      slots.forEach((slot) => {
+        fill(slot);
+        tallest = Math.max(tallest, panel.offsetHeight);
+      });
+      fill(current);
+      panel.style.minHeight = tallest + 'px';
+    };
+    let fitTimer = 0;
+    addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fit, 150); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    fit();
     const pick = (slot) => {
       if (slot === current) return;
       current = slot;
@@ -112,9 +138,7 @@
       bits.forEach((el) => el.classList.add('is-swapping'));
       clearTimeout(swapTimer);
       swapTimer = setTimeout(() => {
-        name.textContent = current.textContent;
-        tools.textContent = current.dataset.tools;
-        used.textContent = current.dataset.used;
+        fill(current);
         bits.forEach((el) => el.classList.remove('is-swapping'));
       }, reduce ? 0 : 80);
     };

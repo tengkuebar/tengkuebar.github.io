@@ -95,23 +95,24 @@ redirect_from: /about/
 
 <section aria-labelledby="toolkit-heading">
   <h2 id="toolkit-heading">Toolkit</h2>
-  <p class="section-note">Pick a slot to see where I used it.</p>
+  <p class="section-note">Pick a slot to see what I did with it.</p>
   <div class="toolkit" data-toolkit>
     <div class="slot-grid">
       {% for slot in site.data.toolkit %}
-      <button class="slot" type="button" data-tools="{{ slot.tools }}" data-used="{{ slot.used }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ slot.name }}</button>
+      <button class="slot" type="button" data-name="{{ slot.name }}" data-use="{{ slot.use }}" data-used="{{ slot.used }}" data-link="{{ slot.link | relative_url }}" data-link-label="{{ slot.link_label }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><span class="slot-label">{{ slot.name }}</span><span class="slot-sub">{{ slot.tools }}</span></button>
       {% endfor %}
     </div>
     <div class="slot-panel" aria-live="polite">
       {% assign first = site.data.toolkit | first %}
       <p class="slot-name" data-slot-name>{{ first.name }}</p>
-      <p class="slot-tools" data-slot-tools>{{ first.tools }}</p>
+      <p class="slot-use" data-slot-use>{{ first.use }}</p>
       <p class="slot-used" data-slot-used>{{ first.used }}</p>
+      <p class="slot-link"><a href="{{ first.link | relative_url }}" data-slot-link>{{ first.link_label }} &rarr;</a></p>
     </div>
   </div>
   <noscript>
     <ul class="slot-fallback">
-      {% for slot in site.data.toolkit %}<li><strong>{{ slot.name }}</strong>: {{ slot.tools }}. {{ slot.used }}</li>{% endfor %}
+      {% for slot in site.data.toolkit %}<li><strong>{{ slot.name }}</strong> ({{ slot.tools }}): {{ slot.used }} <a href="{{ slot.link | relative_url }}">{{ slot.link_label }}</a></li>{% endfor %}
     </ul>
   </noscript>
 </section>
