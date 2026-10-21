@@ -51,6 +51,14 @@ redirect_from: /about/
         <p>Passive domain security checks in plain English.</p>
       </a>
     </li>
+    <li>
+      <a class="tile" href="{{ '/projects/secnews/' | relative_url }}">
+        <span class="tile-frame"><img src="{{ '/assets/img/secnews/today.webp' | relative_url }}" width="1200" height="806" alt="" loading="lazy"></span>
+        <span class="tile-bar" aria-hidden="true"></span>
+        <h3>secnews</h3>
+        <p>Security news and CVE tracker with official NVD scores.</p>
+      </a>
+    </li>
   </ul>
 </section>
 

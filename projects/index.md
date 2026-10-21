@@ -39,4 +39,14 @@ Each project is labelled as a team, personal or home lab project, with my part s
       <span class="read-more">Read the case study <span aria-hidden="true">&rarr;</span></span>
     </div>
   </a>
+  <a class="project-row" href="{{ '/projects/secnews/' | relative_url }}">
+    <span class="thumb-frame"><img class="thumb" src="{{ '/assets/img/secnews/today.webp' | relative_url }}" alt="" loading="lazy"></span>
+    <div>
+      <p class="kind">Personal project, built with an AI coding assistant</p>
+      <h2>secnews</h2>
+      <p class="outcome">My part: requirements, scope and review, with Claude Code writing the code. It reads security news feeds, pulls out the CVE numbers and looks up each official NVD score. A local dashboard shows what needs a decision today, merges the same CVE across sources and never guesses a missing score. It checks robots.txt and binds to localhost only.</p>
+      <ul class="tags"><li>Python</li><li>Flask</li><li>SQLite</li><li>NVD API</li><li>pytest</li></ul>
+      <span class="read-more">Read the case study <span aria-hidden="true">&rarr;</span></span>
+    </div>
+  </a>
 </div>
