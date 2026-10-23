@@ -2125,6 +2125,11 @@ a.feature-media.has-image:active {
   margin-top: 0.4rem;
 }
 
+/* Grid items must line up, so the list spacing above must not push later screenshots down */
+.case-section .shots li + li {
+  margin-top: 0;
+}
+
 .case-section > p {
   font-size: 1.05rem;
   line-height: 1.7;
