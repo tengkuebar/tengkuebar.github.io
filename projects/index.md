@@ -49,4 +49,14 @@ Each project is labelled as a team, personal or home lab project, with my part s
       <span class="read-more">Read the case study <span aria-hidden="true">&rarr;</span></span>
     </div>
   </a>
+  <a class="project-row" href="{{ '/projects/interview-gym/' | relative_url }}">
+    <span class="thumb-frame"><img class="thumb" src="{{ '/assets/img/interview-gym/practice.webp' | relative_url }}" alt="" loading="lazy"></span>
+    <div>
+      <p class="kind">Personal project, built with an AI coding assistant</p>
+      <h2>Interview Gym</h2>
+      <p class="outcome">My part: requirements, design spec and review, with Claude Code writing the code. You practise interviews out loud with an AI recruiter or hiring manager, then get a coach report that quotes your own words and never invents any. The model, voices and speech recognition all run locally, so nothing leaves the computer.</p>
+      <ul class="tags"><li>Python</li><li>FastAPI</li><li>Next.js</li><li>Ollama</li><li>SQLite</li></ul>
+      <span class="read-more">Read the case study <span aria-hidden="true">&rarr;</span></span>
+    </div>
+  </a>
 </div>

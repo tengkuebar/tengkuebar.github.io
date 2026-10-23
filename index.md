@@ -59,6 +59,14 @@ redirect_from: /about/
         <p>Security news and CVE tracker with official NVD scores.</p>
       </a>
     </li>
+    <li>
+      <a class="tile" href="{{ '/projects/interview-gym/' | relative_url }}">
+        <span class="tile-frame"><img src="{{ '/assets/img/interview-gym/practice.webp' | relative_url }}" width="1440" height="760" alt="" loading="lazy"></span>
+        <span class="tile-bar" aria-hidden="true"></span>
+        <h3>Interview Gym</h3>
+        <p>Voice interview practice with local AI, nothing leaves the PC.</p>
+      </a>
+    </li>
   </ul>
 </section>
 
