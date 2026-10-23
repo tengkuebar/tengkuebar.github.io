@@ -60,9 +60,10 @@ lightbox: true
     <h2 id="shots-h">Screenshots</h2>
     <ul class="shots">
       <li><a href="{{ '/assets/img/interview-gym/practice.webp' | relative_url }}"><img src="{{ '/assets/img/interview-gym/practice.webp' | relative_url }}" alt="Interview Gym start screen with three characters, a difficulty choice and a Start voice practice button" loading="lazy"></a></li>
+      <li><a href="{{ '/assets/img/interview-gym/voice.webp' | relative_url }}"><img src="{{ '/assets/img/interview-gym/voice.webp' | relative_url }}" alt="Interview Gym voice mode with a glowing orb and ripple rings while the app listens, and the recruiter's opening line shown as a caption" loading="lazy"></a></li>
       <li><a href="{{ '/assets/img/interview-gym/report.webp' | relative_url }}"><img src="{{ '/assets/img/interview-gym/report.webp' | relative_url }}" alt="Interview Gym coach report with strengths that quote the candidate, one thing to try next, a story shape checklist and counted numbers" loading="lazy"></a></li>
     </ul>
-    <p class="fineprint">The report screenshot comes from a short scripted practice conversation that I wrote for the demo, not from a real interview.</p>
+    <p class="fineprint">The voice screen shows the orb listening after the recruiter's opening line. The report screenshot comes from a short scripted practice conversation that I wrote for the demo, not from a real interview.</p>
   </section>
 
   <div class="case-foot">
