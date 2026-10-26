@@ -130,6 +130,15 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
     <section aria-labelledby="vol-h">
       <h2 id="vol-h">Volunteering</h2>
       <div class="entry">
+        <h3>Food and Beverage Volunteer</h3>
+        <p class="meta">Festival Indonesia (arts and culture), Federation Square, Melbourne. Oct 2026, one day.</p>
+        <ul>
+          <li>Ran the food and beverage stall and sold items directly to about 100 visitors.</li>
+          <li>Handled cash payments, giving correct change and counting the physical cash takings at the end of the day.</li>
+          <li>Counted sold and unsold stock against opening inventory, then calculated the day's sales and profit.</li>
+        </ul>
+      </div>
+      <div class="entry">
         <h3>Publications Manager</h3>
         <p class="meta">Sharing For Surrounding 2019 (poverty alleviation). Jul 2019, one month.</p>
         <ul>
