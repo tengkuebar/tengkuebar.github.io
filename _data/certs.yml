@@ -5,7 +5,7 @@
 # badge is an optional path to the official badge image, for example /assets/img/certs/google-it-support.webp.
 # Leave it out for a dashed placeholder; an In progress certificate always shows an empty slot.
 
-- name: Google IT Support Professional Specialization
+- name: Google IT Support Professional Certificate
   issuer: Google
   status: Earned
   badge: /assets/img/certs/google-it-support.webp

@@ -22,7 +22,7 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
       <section class="side-block rise d2" aria-labelledby="certs-h">
         <h2 id="certs-h">Certifications</h2>
         <ul>
-          <li>Google IT Support Professional Specialization</li>
+          <li>Google IT Support Professional Certificate</li>
           <li>Certified in Cybersecurity (CC), ISC2</li>
           <li>Microsoft Azure Fundamentals (AZ-900), in progress</li>
         </ul>
@@ -60,7 +60,7 @@ description: Resume of Tengku Ebar Syarif Hamzah, graduate ICT support engineer 
     </nav>
     <section class="rise d2" aria-labelledby="summary-h">
       <h2 id="summary-h">Professional summary</h2>
-      <p class="summary">Graduate ICT support engineer with a Master of Cybersecurity from Monash University. I diagnose and resolve installation and software problems, test systems for functionality and security, and write technical documentation. I hold the Google IT Support Professional Specialization and ISC2 CC, and I am preparing for Microsoft AZ-900.</p>
+      <p class="summary">Graduate ICT support engineer with a Master of Cybersecurity from Monash University. I diagnose and resolve installation and software problems, test systems for functionality and security, and write technical documentation. I hold the Google IT Support Professional Certificate and ISC2 CC, and I am preparing for Microsoft AZ-900.</p>
     </section>
 
     <section class="rise d3" aria-labelledby="skills-h">
