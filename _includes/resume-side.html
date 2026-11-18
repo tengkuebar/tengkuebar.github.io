@@ -1,0 +1,32 @@
+<aside class="resume-side">
+  <div class="side-sticky">
+    <div class="rise">
+      <h1>Tengku Ebar Syarif Hamzah</h1>
+      <p class="roles">{{ include.roles | replace: "|", "<br>" }}</p>
+      <p class="contact-lines">Melbourne, Victoria, Australia<br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="{{ site.linkedin_url }}">LinkedIn</a></p>
+      <p><a class="btn btn-block" href="{{ include.pdf | relative_url }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"></path></svg>Download {{ include.label }} resume (PDF)</a></p>
+    </div>
+
+    <section class="side-block rise d2" aria-labelledby="{{ include.id }}-certs-h">
+      <h2 id="{{ include.id }}-certs-h">Certifications</h2>
+      <ul>
+        {% if include.id == "c" %}
+        <li>Certified in Cybersecurity (CC), ISC2</li>
+        <li>Google IT Support Professional Certificate</li>
+        {% else %}
+        <li>Google IT Support Professional Certificate</li>
+        <li>Certified in Cybersecurity (CC), ISC2</li>
+        {% endif %}
+        <li>Microsoft Azure Fundamentals (AZ-900), in progress</li>
+        <li>Generative AI Essentials, IBM (Coursera), Oct 2026</li>
+        <li>ESQ Public Speaking Mastery, ESQ Leadership Center, 2021</li>
+      </ul>
+    </section>
+
+    <section class="side-block rise d3" aria-labelledby="{{ include.id }}-lang-h">
+      <h2 id="{{ include.id }}-lang-h">Languages and work rights</h2>
+      <p>English (Full Professional)<br>Indonesian (Native)<br>Malay (Professional Working)</p>
+      <p class="fineprint">Temporary Graduate visa (subclass 485). Full working rights in Australia. Open to sponsorship and willing to relocate.</p>
+    </section>
+  </div>
+</aside>

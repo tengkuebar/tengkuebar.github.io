@@ -2961,3 +2961,118 @@ a.feature-media.has-image:active {
     transition: none;
   }
 }
+
+/* Resume page: switch between the Cybersecurity and IT Support resumes */
+.track-bar {
+  display: none;
+  justify-content: center;
+  padding: 2rem 0 0.5rem;
+}
+
+.tabs-js .track-bar {
+  display: flex;
+}
+
+.track-switch {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.3rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.track-switch button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  min-width: 12.5rem;
+  padding: 0.7rem 1.6rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text-muted);
+  transition: color 0.2s var(--ease-out);
+}
+
+.track-switch button b {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.track-switch button small {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.track-switch button[aria-selected="true"] {
+  color: var(--btn-text);
+}
+
+.track-switch button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.track-pill {
+  position: absolute;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  left: 0.3rem;
+  width: calc(50% - 0.3rem);
+  background: var(--btn-bg);
+  transition: transform 0.3s var(--ease-in-out);
+}
+
+.track-switch[data-active="support"] .track-pill {
+  transform: translateX(100%);
+}
+
+.tabs-js .track-pane {
+  display: none;
+}
+
+.tabs-js[data-track="cyber"] #pane-cyber,
+.tabs-js[data-track="support"] #pane-support {
+  display: block;
+  animation: pane-in 0.35s var(--ease-out);
+}
+
+@keyframes pane-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 40em) {
+  .track-switch {
+    width: 100%;
+  }
+
+  .track-switch button {
+    min-width: 0;
+    padding: 0.65rem 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs-js[data-track] .track-pane {
+    animation: none;
+  }
+
+  .track-pill {
+    transition: none;
+  }
+}

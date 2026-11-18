@@ -7,9 +7,8 @@ clip: true
 
 <section class="hero">
   <div class="hero-text">
-    <p class="eyebrow rise">Off the clock</p>
-    <h1 class="rise d2">Outside work, I play, tinker and build.</h1>
-    <p class="lead rise d3">Three things fill my spare time: gaming, experimenting with security tools, and building apps. I believe learning and experiencing new things builds imagination and creativity, and each of these is a way to do both.</p>
+    <h1 class="rise">Outside work, I play, tinker and build.</h1>
+    <p class="lead rise d2">I believe learning and experiencing new things builds imagination and creativity.</p>
   </div>
   <img class="photo wide rise d3" src="{{ '/assets/img/setup.webp' | relative_url }}" width="1000" height="750" alt="Syarif at his desk, smiling, with a code editor on one monitor and a project open on a vertical second monitor">
 </section>

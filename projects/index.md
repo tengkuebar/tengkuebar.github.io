@@ -6,8 +6,6 @@ description: Study, team and home lab projects by Syarif, labelled as what they 
 
 # Projects
 
-Each project is labelled as a team, personal or home lab project, with my part stated plainly. Open one for the evidence: what I did, how I tested it and where it falls short.
-
 <div class="project-rows">
   <a class="project-row" href="{{ '/projects/beyondreaim/' | relative_url }}">
     <span class="thumb-frame"><img class="thumb" src="{{ '/assets/img/beyondreaim/home.webp' | relative_url }}" alt="" loading="lazy"></span>

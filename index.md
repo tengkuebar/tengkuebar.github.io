@@ -6,7 +6,7 @@ redirect_from: /about/
 <section class="hero hero-home">
   <div class="hero-text">
     <h1 class="rise">I get people&rsquo;s tech working again.</h1>
-    <p class="lead rise d2">Graduate ICT support engineer in Melbourne, with a Master of Cybersecurity from Monash University. Looking for ICT support engineer and entry-level cybersecurity roles.</p>
+    <p class="lead rise d2">Graduate ICT support engineer in Melbourne, with a Master of Cybersecurity from Monash University. Looking for ICT support engineer, entry-level cybersecurity and internship roles.</p>
     <p class="hero-actions">
       <a class="btn" href="mailto:{{ site.email }}">Email me</a>
       <a class="btn btn-secondary" href="{{ '/resume/' | relative_url }}">View resume</a>
@@ -17,7 +17,6 @@ redirect_from: /about/
     <div class="hero-frame">
       <img src="{{ '/assets/img/graduation.webp' | relative_url }}" width="800" height="1000" alt="Syarif in a graduation gown and cap, sitting on a wide staircase seen from above">
     </div>
-    <figcaption>Graduation day.</figcaption>
   </figure>
 </section>
 
@@ -111,7 +110,6 @@ redirect_from: /about/
 
 <section aria-labelledby="toolkit-heading">
   <h2 id="toolkit-heading">Toolkit</h2>
-  <p class="section-note">Pick a slot to see what I did with it.</p>
   <div class="toolkit" data-toolkit>
     <div class="slot-grid">
       {% for slot in site.data.toolkit %}
@@ -162,15 +160,12 @@ redirect_from: /about/
       <p>I co-authored a paper on a digital healthcare platform business model. <a href="https://www.researchpublish.com/papers/a-conceptual-ehealthcare4u-digital-platform-business-model-ensure-healthy-lives-and-promote-wellbeing-for-all-ages-of-healthcare-and-including-prevention--cure">Read the paper</a>.</p>
     </li>
   </ol>
-  <p>There is more detail on the <a href="{{ '/resume/' | relative_url }}">resume page</a>.</p>
 </section>
 
 <section class="contact-field" aria-labelledby="contact-heading">
   <h2 id="contact-heading">Hiring for ICT support or entry-level security? Let&rsquo;s talk.</h2>
-  <p>Email is the easiest way to reach me. I&rsquo;m based in Melbourne, Victoria, with full working rights in Australia.</p>
   <p class="contact-actions">
     <a class="btn" href="mailto:{{ site.email }}">Email me</a>
-    <a class="btn" href="{{ site.resume_path | relative_url }}">Download resume (PDF)</a>
     {% if site.linkedin_url != "" %}<a class="btn" href="{{ site.linkedin_url }}">LinkedIn</a>{% endif %}
   </p>
 </section>

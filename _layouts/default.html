@@ -47,7 +47,6 @@
       </ul>
     </div>
     <div class="band-inner footer-sub">
-      <p>Based in Melbourne. Open to ICT support and entry-level cybersecurity roles.</p>
       <p>&copy; {{ site.time | date: "%Y" }}</p>
     </div>
   </footer>
@@ -55,6 +54,7 @@
   <script src="{{ '/assets/js/reveal.js' | relative_url }}" defer></script>
   {% if page.url == '/' %}<script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>{% endif %}
   {% if page.clip %}<script src="{{ '/assets/js/clip.js' | relative_url }}" defer></script>{% endif %}
+  {% if page.resumetabs %}<script src="{{ '/assets/js/resume-tabs.js' | relative_url }}" defer></script>{% endif %}
   {% if page.sectionnav %}<script src="{{ '/assets/js/section-nav.js' | relative_url }}" defer></script>{% endif %}
   {% if page.lightbox %}<script src="{{ '/assets/js/lightbox.js' | relative_url }}" defer></script>{% endif %}
 </body>

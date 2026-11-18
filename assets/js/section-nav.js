@@ -1,8 +1,7 @@
 // Resume page: a sticky strip of section links that highlights where you are as you scroll,
 // and collapses to a one-line summary. Without JavaScript it is a plain row of anchor links.
-(() => {
-  const nav = document.getElementById('section-nav');
-  if (!nav) return;
+// The page can hold more than one strip (one per resume tab); only the visible one is measured.
+document.querySelectorAll('.section-nav').forEach((nav) => {
 
   const scroller = nav.querySelector('.sn-tabs');
   const links = [...nav.querySelectorAll('.sn-list a')];
@@ -12,6 +11,7 @@
   const toggle = nav.querySelector('.sn-toggle');
   const heads = links.map((a) => document.getElementById(a.getAttribute('href').slice(1)));
   if (!scroller || !toggle || heads.some((h) => !h)) return;
+  const visible = () => nav.offsetParent !== null;
 
   const KEY = 'resume-nav-open';
   let active = -1;
@@ -71,7 +71,7 @@
   let queued = false;
   const update = () => {
     queued = false;
-    if (pinned === null) setActive(current());
+    if (visible() && pinned === null) setActive(current());
   };
   const schedule = () => {
     if (queued) return;
@@ -99,12 +99,20 @@
   toggle.addEventListener('click', () => setOpen(!open, true));
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', () => {
+    if (!visible()) return;
     place(active);
     schedule();
   });
+  // A tab switch reveals a strip that could not be measured while hidden.
+  window.addEventListener('resume-tab', () => {
+    if (!visible()) return;
+    pinned = null;
+    active = -1;
+    setActive(current());
+  });
 
   setOpen(open, false);
-  setActive(current());
+  if (visible()) setActive(current());
   // Turn transitions on after the first paint so the strip doesn't animate into its start state.
   requestAnimationFrame(() => requestAnimationFrame(() => nav.classList.add('sn-ready')));
-})();
+});
